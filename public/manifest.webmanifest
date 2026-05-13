@@ -1,0 +1,49 @@
+{
+  "name": "FormReady",
+  "short_name": "FormReady",
+  "description": "Privacy-first PDF and image compression to exact KB. Works offline.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8FAFC",
+  "theme_color": "#3D5AFE",
+  "scope": "/",
+  "lang": "en-IN",
+  "categories": ["productivity", "utilities", "education"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Compress PDF",
+      "short_name": "PDF",
+      "url": "/compress-pdf"
+    },
+    {
+      "name": "Compress Image",
+      "short_name": "Image",
+      "url": "/compress-image"
+    },
+    {
+      "name": "Photo & Signature",
+      "short_name": "Photo",
+      "url": "/photo-signature"
+    }
+  ]
+}

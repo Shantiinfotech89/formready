@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * FormReady — Global styles + design tokens (CSS variables in HSL)
+ *
+ * Brand: Razorpay-grade Indian Fintech-Modern (Option 6)
+ * See BRAND_GUIDELINES.md for the full reference and usage rules.
+ *
+ * HSL is used (not hex) so Tailwind opacity modifiers like `bg-primary/50` work.
+ */
+
+@layer base {
+  :root {
+    /* ─── Surfaces ─── */
+    --background: 210 40% 98%;            /* neutral-50  #F8FAFC — page bg */
+    --foreground: 222 47% 11%;            /* neutral-900 #0F172A — body text */
+
+    --surface-page: 210 40% 98%;
+    --surface-page-warm: 36 100% 98%;     /* neutral-25  #FFFBF5 — long-form pages */
+    --surface-card: 0 0% 100%;
+    --surface-tactical: 33 100% 92%;      /* tactical soft */
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --card-warm: 36 100% 98%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* ─── Brand primary — Form Indigo ─── */
+    --primary: 232 99% 62%;               /* #3D5AFE */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 232 70% 53%;         /* #3347D9 */
+    --primary-press: 232 60% 41%;         /* #2935A8 — AAA on white */
+
+    /* ─── Brand secondary — Precision Blue ─── */
+    --secondary: 199 89% 48%;             /* #0EA5E9 */
+    --secondary-foreground: 0 0% 100%;
+
+    /* ─── Success — Achievement Green ─── */
+    --success: 160 84% 39%;               /* #10B981 */
+    --success-foreground: 0 0% 100%;
+    --success-strong: 160 92% 24%;        /* #047857 — AA text on white */
+    --success-soft: 149 80% 90%;          /* #D1FAE5 */
+
+    /* ─── Tactical — Saffron Tint (Indian-keyword pages only, max 5%) ─── */
+    --tactical: 20 95% 53%;               /* #F97316 */
+    --tactical-foreground: 0 0% 100%;
+    --tactical-soft: 33 100% 92%;         /* #FFEDD5 */
+
+    /* ─── Destructive ─── */
+    --destructive: 0 73% 50%;             /* #DC2626 */
+    --destructive-foreground: 0 0% 100%;
+    --destructive-soft: 0 93% 94%;        /* #FEE2E2 */
+
+    /* ─── Warning ─── */
+    --warning: 38 92% 50%;                /* #F59E0B */
+    --warning-foreground: 0 0% 100%;
+    --warning-soft: 48 96% 89%;           /* #FEF3C7 */
+
+    /* ─── Muted / Accent / Border / Input / Ring ─── */
+    --muted: 210 40% 96%;                 /* neutral-100 */
+    --muted-foreground: 215 19% 35%;      /* neutral-600 — body secondary */
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --border: 214 32% 91%;                /* neutral-200 */
+    --input: 213 27% 84%;                 /* neutral-300 */
+    --ring: 232 99% 62%;                  /* primary — focus ring */
+
+    /* ─── Layout ─── */
+    --radius: 8px;                        /* default radius — buttons, cards, modals */
+    --container-narrow: 640px;
+    --container-default: 1024px;
+    --container-wide: 1280px;
+  }
+
+  /* Reduced motion: collapse all motion to instant fades */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11"; /* Inter stylistic alternates */
+  }
+
+  /* Devanagari content — apply to elements with lang="hi" */
+  [lang="hi"],
+  .lang-hi {
+    @apply font-devanagari;
+  }
+
+  /* Numerals that matter — KB, file sizes, progress — opt in via .num */
+  .num {
+    @apply font-mono tabular-nums;
+    font-feature-settings: "tnum", "ss03";
+  }
+
+  /* Selection */
+  ::selection {
+    background: hsl(var(--primary) / 0.18);
+    color: hsl(var(--primary-press));
+  }
+}
+
+@layer components {
+  /* ─── Article prose typography (used by blog posts) ─── */
+  .article-prose {
+    @apply text-base leading-relaxed text-foreground;
+  }
+  .article-prose > * + * {
+    @apply mt-5;
+  }
+  .article-prose h2 {
+    @apply text-2xl font-bold tracking-tight scroll-mt-24;
+    @apply mt-12 mb-3;
+  }
+  .article-prose h3 {
+    @apply text-xl font-semibold tracking-tight scroll-mt-24;
+    @apply mt-8 mb-2;
+  }
+  .article-prose h4 {
+    @apply text-lg font-semibold tracking-tight scroll-mt-24;
+    @apply mt-6 mb-2;
+  }
+  .article-prose p {
+    @apply leading-relaxed text-foreground;
+  }
+  .article-prose a {
+    @apply text-primary-press underline underline-offset-4 decoration-primary/30 transition-colors duration-fast hover:decoration-primary;
+  }
+  .article-prose strong {
+    @apply font-semibold text-foreground;
+  }
+  .article-prose em {
+    @apply italic;
+  }
+  .article-prose ul {
+    @apply list-disc space-y-2 pl-6;
+  }
+  .article-prose ol {
+    @apply list-decimal space-y-2 pl-6;
+  }
+  .article-prose li {
+    @apply leading-relaxed marker:text-muted-foreground;
+  }
+  .article-prose li > p {
+    @apply m-0;
+  }
+  .article-prose blockquote {
+    @apply border-l-4 border-primary/30 bg-muted/40 px-5 py-3 italic text-muted-foreground;
+  }
+  .article-prose code {
+    @apply font-mono text-[0.9em] rounded bg-muted px-1.5 py-0.5;
+  }
+  .article-prose pre {
+    @apply overflow-x-auto rounded-lg bg-foreground p-4 text-sm text-background;
+  }
+  .article-prose pre code {
+    @apply bg-transparent p-0 text-background;
+  }
+  .article-prose hr {
+    @apply my-10 border-border;
+  }
+  .article-prose table {
+    @apply w-full border-collapse text-sm;
+  }
+  .article-prose th {
+    @apply border-b-2 border-border bg-muted/50 px-3 py-2 text-left font-semibold;
+  }
+  .article-prose td {
+    @apply border-b border-border px-3 py-2 align-top;
+  }
+  .article-prose img {
+    @apply rounded-lg border border-border;
+  }
+
+  /* ─── Drop-zone success pulse — one-shot on file-accepted state ─── */
+  /*
+   * Brief shadow-glow pulse the moment a file is accepted. Decorative
+   * confirmation that the file landed. Runs once per state entry, doesn't
+   * loop. Reduced-motion users get the static state — animation collapses
+   * to ~0ms via the global override.
+   */
+  @keyframes drop-success-pulse {
+    0% {
+      box-shadow: 0 0 0 0 hsl(var(--success) / 0.45);
+    }
+    100% {
+      box-shadow: 0 0 0 14px hsl(var(--success) / 0);
+    }
+  }
+  .drop-success-pulse {
+    animation: drop-success-pulse 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* ─── Stagger entrance for grid children (decorative, runs once on first paint) ─── */
+  /*
+   * Adds a small fade + 8px upward translate to each direct child, with a
+   * 50ms cascade between siblings. Per Emil's rule, this is decorative-only —
+   * children are fully interactive from frame 0 (animation never gates events).
+   * `prefers-reduced-motion` collapses to instant via the global override.
+   */
+  @keyframes stagger-fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .stagger-children > * {
+    animation: stagger-fade-in-up 300ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+  .stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+  .stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+  .stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+  .stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+
+  /* ─── Saffron tactical accent bar (Indian-keyword landing pages only) ─── */
+  .tactical-bar {
+    @apply h-1 w-full bg-tactical;
+  }
+
+  /* ─── Saffron underline (highlighter behind the keyword in H1) ─── */
+  .saffron-underline {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+  }
+  .saffron-underline::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0.18em;
+    height: 0.28em;
+    background: hsl(var(--tactical));
+    opacity: 0.85;
+    border-radius: 2px;
+    z-index: -1;
+  }
+
+  /* ─── Privacy lockup pulse (gentle, subtle attention without movement) ─── */
+  .lockup-pulse {
+    transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .lockup-pulse:hover {
+    transform: scale(1.06);
+  }
+
+  /* ─── Container wrapper that respects long-form vs default ─── */
+  .container-narrow {
+    @apply mx-auto w-full max-w-[640px] px-4 sm:px-6;
+  }
+  .container-default {
+    @apply mx-auto w-full max-w-[1024px] px-4 sm:px-6 lg:px-12;
+  }
+  .container-wide {
+    @apply mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-12;
+  }
+}
+
+@layer utilities {
+  /* Hover gating — only enable hover effects on devices with real hover */
+  @media (hover: hover) and (pointer: fine) {
+    .hover-gate {
+      /* Components opt in to hover effects under this class. */
+    }
+  }
+
+  /* Focus-visible ring — applied via component classes */
+  .focus-ring {
+    @apply outline-none ring-offset-2 ring-offset-background focus-visible:ring-[3px] focus-visible:ring-primary/30;
+  }
+
+  /* Press scale — Emil's pressable feedback */
+  .pressable {
+    @apply transition-transform duration-fast ease-out-strong active:scale-[0.97];
+  }
+}

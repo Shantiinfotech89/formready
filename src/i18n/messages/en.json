@@ -1,0 +1,43 @@
+{
+  "brand": {
+    "name": "FormReady",
+    "tagline": "Get your documents form-ready.",
+    "taglineShort": "Exact size, instantly."
+  },
+  "nav": {
+    "pdf": "PDF",
+    "image": "Image",
+    "photoSignature": "Photo & Signature",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "login": "Log in",
+    "compressNow": "Compress now"
+  },
+  "privacy": {
+    "compact": "Stays on your device.",
+    "verifyLink": "Verify yourself",
+    "footer": "Compressed locally · No upload",
+    "footerVerifiable": "Verifiable",
+    "trust": {
+      "browser": {
+        "title": "100% Browser",
+        "body": "Your file is compressed in the browser via WebAssembly."
+      },
+      "noUpload": {
+        "title": "Never Uploaded",
+        "body": "We have no servers that touch your file. By design."
+      },
+      "verify": {
+        "title": "Verify Yourself",
+        "body": "Open DevTools, watch the Network tab. Zero outbound requests."
+      }
+    }
+  },
+  "designSystem": {
+    "title": "Design System",
+    "lede": "Internal reference for tokens, components, and patterns. This page is not user-facing."
+  },
+  "common": {
+    "comingSoon": "Coming soon"
+  }
+}

@@ -1,0 +1,145 @@
+/**
+ * FormReady — Design Tokens (CSS Custom Properties)
+ * Direction: Razorpay-grade Indian Fintech-Modern (Option 6 + selective borrowings)
+ *
+ * Use this file in non-Tailwind contexts: emails, plain HTML pages, embedded widgets.
+ * Tailwind contexts should reference brand/tokens.ts via tailwind.config.ts.
+ */
+
+:root {
+  /* Brand colours */
+  --brand-primary: #3D5AFE;
+  --brand-primary-fg: #FFFFFF;
+  --brand-primary-hover: #3347D9;
+  --brand-primary-press: #2935A8;
+  --brand-secondary: #0EA5E9;
+  --brand-success: #10B981;
+  --brand-success-strong: #047857;
+  --brand-success-soft-bg: #D1FAE5;
+
+  /* Tactical (Indian-keyword landing pages only — max 5% surface) */
+  --brand-tactical: #F97316;
+  --brand-tactical-soft: #FFEDD5;
+
+  /* Semantic */
+  --brand-danger: #DC2626;
+  --brand-danger-soft-bg: #FEE2E2;
+  --brand-warning: #F59E0B;
+  --brand-warning-soft-bg: #FEF3C7;
+
+  /* Neutrals */
+  --neutral-0: #FFFFFF;
+  --neutral-25: #FFFBF5;
+  --neutral-50: #F8FAFC;
+  --neutral-100: #F1F5F9;
+  --neutral-200: #E2E8F0;
+  --neutral-300: #CBD5E1;
+  --neutral-400: #94A3B8;
+  --neutral-500: #64748B;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1E293B;
+  --neutral-900: #0F172A;
+  --neutral-950: #020617;
+
+  /* Surface roles */
+  --surface-page: var(--neutral-50);
+  --surface-page-warm: var(--neutral-25);
+  --surface-card: var(--neutral-0);
+  --surface-elevated: var(--neutral-0);
+  --surface-overlay: rgba(2, 6, 23, 0.55);
+  --surface-tactical: var(--brand-tactical-soft);
+
+  /* Fonts */
+  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
+  --font-devanagari: var(--font-hind), Hind, Inter, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Spacing (4px base) */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Containers */
+  --container-narrow: 640px;
+  --container-default: 1024px;
+  --container-wide: 1280px;
+
+  /* Radius */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 2px 4px rgba(15, 23, 42, 0.05), 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 8px 16px rgba(15, 23, 42, 0.08), 0 16px 32px rgba(15, 23, 42, 0.10);
+  --shadow-xl: 0 16px 32px rgba(61, 90, 254, 0.12), 0 32px 64px rgba(15, 23, 42, 0.10);
+  --shadow-focus: 0 0 0 3px rgba(61, 90, 254, 0.32);
+  --shadow-focus-success: 0 0 0 3px rgba(16, 185, 129, 0.28);
+
+  /* Motion duration */
+  --motion-instant: 75ms;
+  --motion-fast: 150ms;
+  --motion-base: 200ms;
+  --motion-slow: 300ms;
+  --motion-slower: 500ms;
+
+  /* Motion easing */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --ease-soft-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Type scale (size / line-height pairs as separate vars) */
+  --text-display-2xl-size: 72px;
+  --text-display-2xl-leading: 76px;
+  --text-display-xl-size: 60px;
+  --text-display-xl-leading: 64px;
+  --text-display-lg-size: 48px;
+  --text-display-lg-leading: 52px;
+  --text-display-md-size: 36px;
+  --text-display-md-leading: 40px;
+  --text-display-sm-size: 30px;
+  --text-display-sm-leading: 36px;
+  --text-2xl-size: 24px;
+  --text-2xl-leading: 32px;
+  --text-xl-size: 20px;
+  --text-xl-leading: 28px;
+  --text-lg-size: 18px;
+  --text-lg-leading: 28px;
+  --text-base-size: 16px;
+  --text-base-leading: 24px;
+  --text-sm-size: 14px;
+  --text-sm-leading: 20px;
+  --text-xs-size: 12px;
+  --text-xs-leading: 16px;
+}
+
+/* Reduced-motion override — collapse all motion to instant fades */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-instant: 0ms;
+    --motion-fast: 0ms;
+    --motion-base: 0ms;
+    --motion-slow: 0ms;
+    --motion-slower: 0ms;
+    --ease-soft-spring: var(--ease-standard);
+  }
+}

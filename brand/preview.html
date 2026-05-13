@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FormReady — Brand Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* === DESIGN TOKENS === */
+  :root {
+    --brand-primary: #3D5AFE;
+    --brand-primary-hover: #3347D9;
+    --brand-primary-press: #2935A8;
+    --brand-secondary: #0EA5E9;
+    --brand-success: #10B981;
+    --brand-success-strong: #047857;
+    --brand-success-soft-bg: #D1FAE5;
+    --brand-tactical: #F97316;
+    --brand-tactical-soft: #FFEDD5;
+    --brand-danger: #DC2626;
+    --brand-warning: #F59E0B;
+    --neutral-0: #FFFFFF;
+    --neutral-25: #FFFBF5;
+    --neutral-50: #F8FAFC;
+    --neutral-100: #F1F5F9;
+    --neutral-200: #E2E8F0;
+    --neutral-300: #CBD5E1;
+    --neutral-400: #94A3B8;
+    --neutral-500: #64748B;
+    --neutral-600: #475569;
+    --neutral-700: #334155;
+    --neutral-800: #1E293B;
+    --neutral-900: #0F172A;
+    --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 2px 4px rgba(15, 23, 42, 0.05), 0 4px 12px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 8px 16px rgba(15, 23, 42, 0.08), 0 16px 32px rgba(15, 23, 42, 0.10);
+    --shadow-xl: 0 16px 32px rgba(61, 90, 254, 0.12), 0 32px 64px rgba(15, 23, 42, 0.10);
+    --shadow-focus: 0 0 0 3px rgba(61, 90, 254, 0.32);
+    --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+    --ease-soft-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* === RESET === */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--neutral-50);
+    color: var(--neutral-900);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; }
+
+  /* === DOC NAV (preview-only) === */
+  .doc-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--neutral-200);
+    padding: 12px 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .doc-nav strong {
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin-right: 12px;
+  }
+  .doc-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--neutral-600);
+    text-decoration: none;
+    transition: color var(--motion-fast, 150ms) var(--ease-standard);
+  }
+  .doc-nav a:hover { color: var(--brand-primary-press); }
+
+  /* === SECTION === */
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+  .section + .section {
+    border-top: 1px solid var(--neutral-200);
+  }
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-primary);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin: 0 0 8px;
+  }
+  .section-lede {
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--neutral-600);
+    max-width: 640px;
+    margin: 0 0 48px;
+  }
+
+  /* === IDENTITY === */
+  .identity-hero {
+    background: linear-gradient(135deg, #FFFFFF 0%, #EEF2FF 100%);
+    border-radius: 16px;
+    padding: 80px 48px;
+    text-align: center;
+    border: 1px solid var(--neutral-200);
+  }
+  .wordmark {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 72px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0;
+  }
+  .wordmark .form { color: var(--brand-primary); }
+  .wordmark .ready { color: var(--brand-success); }
+  .identity-tagline {
+    font-size: 20px;
+    color: var(--neutral-600);
+    margin-top: 24px;
+    font-weight: 500;
+  }
+  .identity-tagline-hi {
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
+    color: var(--neutral-500);
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  .ftile-row {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+  .ftile {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #3D5AFE 0%, #0EA5E9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1;
+    box-shadow: var(--shadow-lg);
+  }
+  .ftile::after {
+    content: "▾";
+    position: absolute;
+    bottom: 16px;
+    right: 24px;
+    font-size: 16px;
+    color: var(--brand-success);
+    line-height: 1;
+  }
+  .ftile.sm {
+    width: 48px;
+    height: 48px;
+    border-radius: 11px;
+    font-size: 28px;
+  }
+  .ftile.sm::after { bottom: 8px; right: 12px; font-size: 9px; }
+  .ftile.xs {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    font-size: 18px;
+  }
+  .ftile.xs::after { bottom: 5px; right: 8px; font-size: 7px; }
+
+  /* === COLOR PALETTE === */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .swatch {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--neutral-200);
+    overflow: hidden;
+    box-shadow: var(--shadow-xs);
+  }
+  .swatch-fill {
+    height: 96px;
+    position: relative;
+  }
+  .swatch-fill .pin {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255,255,255,0.92);
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--neutral-700);
+  }
+  .swatch-meta {
+    padding: 16px;
+  }
+  .swatch-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--neutral-900);
+    margin: 0 0 4px;
+  }
+  .swatch-token {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--neutral-500);
+    margin: 0 0 8px;
+  }
+  .swatch-role {
+    font-size: 12px;
+    color: var(--neutral-600);
+    line-height: 16px;
+    margin: 0;
+  }
+  .palette-group-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--neutral-700);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 32px 0 12px;
+  }
+  .palette-group-title:first-child { margin-top: 0; }
+
+  /* === TYPOGRAPHY === */
+  .type-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--neutral-100);
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--neutral-500);
+  }
+  .type-meta .label {
+    display: block;
+    color: var(--neutral-700);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .type-display-xl  { font-size: 60px; line-height: 64px; letter-spacing: -0.03em; font-weight: 700; }
+  .type-display-lg  { font-size: 48px; line-height: 52px; letter-spacing: -0.02em; font-weight: 700; }
+  .type-display-md  { font-size: 36px; line-height: 40px; letter-spacing: -0.02em; font-weight: 700; }
+  .type-2xl         { font-size: 24px; line-height: 32px; font-weight: 600; }
+  .type-xl          { font-size: 20px; line-height: 28px; font-weight: 600; }
+  .type-lg          { font-size: 18px; line-height: 28px; font-weight: 500; }
+  .type-base        { font-size: 16px; line-height: 24px; font-weight: 400; }
+  .type-sm          { font-size: 14px; line-height: 20px; font-weight: 400; color: var(--neutral-600); }
+  .type-mono        { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 500; }
+  .hindi { font-family: 'Hind', sans-serif; }
+
+  /* === COMPONENTS === */
+  .components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .component-card {
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-xs);
+  }
+  .component-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+  .button-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* Button variants */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    transition: background 150ms var(--ease-standard), transform 150ms var(--ease-standard), box-shadow 200ms var(--ease-standard);
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--brand-primary);
+    color: white;
+  }
+  .btn-primary:hover { background: var(--brand-primary-hover); transform: translateY(-1px); }
+  .btn-primary:active { background: var(--brand-primary-press); transform: translateY(0); }
+  .btn-primary-glow {
+    background: var(--brand-primary);
+    color: white;
+    box-shadow: var(--shadow-xl);
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+  .btn-primary-glow:hover { background: var(--brand-primary-hover); transform: translateY(-2px); }
+  .btn-secondary {
+    background: white;
+    color: var(--brand-primary);
+    border-color: var(--brand-primary);
+  }
+  .btn-secondary:hover { background: #EEF2FF; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--neutral-700);
+  }
+  .btn-ghost:hover { background: var(--neutral-100); }
+  .btn-success {
+    background: var(--brand-success);
+    color: white;
+  }
+  .btn-success:hover { background: var(--brand-success-strong); }
+  .btn-danger {
+    background: white;
+    color: var(--brand-danger);
+    border-color: var(--brand-danger);
+  }
+  .btn-link {
+    background: transparent;
+    color: var(--brand-primary-press);
+    padding: 0;
+    border-radius: 0;
+  }
+  .btn-link:hover { text-decoration: underline; }
+
+  /* Input */
+  .input-stack { display: flex; flex-direction: column; gap: 6px; }
+  .input-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--neutral-700);
+  }
+  .input {
+    padding: 10px 12px;
+    border: 1px solid var(--neutral-300);
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 150ms, box-shadow 200ms;
+  }
+  .input:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: var(--shadow-focus);
+  }
+  .input.kb-target {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .input-helper {
+    font-size: 13px;
+    color: var(--neutral-500);
+  }
+
+  /* Preset chips */
+  .preset-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .chip {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    background: var(--neutral-100);
+    color: var(--neutral-700);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+    transition: background 150ms;
+  }
+  .chip:hover { background: var(--neutral-200); }
+  .chip.active { background: var(--brand-primary); color: white; }
+
+  /* Badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  .badge-success { background: var(--brand-success-soft-bg); color: var(--brand-success-strong); }
+  .badge-info    { background: #DBEAFE; color: #1E40AF; }
+  .badge-warning { background: #FEF3C7; color: #92400E; }
+  .badge-danger  { background: #FEE2E2; color: #991B1B; }
+  .badge-neutral { background: var(--neutral-100); color: var(--neutral-700); }
+  .badge-tactical { background: var(--brand-tactical-soft); color: #9A3412; }
+
+  /* === PRIVACY LOCKUP === */
+  .privacy-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--neutral-600);
+  }
+  .privacy-lockup .lock-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--brand-success);
+  }
+  .privacy-lockup .verifiable-link {
+    color: var(--brand-primary-press);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .privacy-lockup .verifiable-link:hover { text-decoration: underline; }
+
+  /* Trust strip */
+  .trust-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: 16px;
+    padding: 32px;
+  }
+  .trust-cell {
+    text-align: center;
+  }
+  .trust-cell .ico {
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    background: var(--brand-success-soft-bg);
+    color: var(--brand-success-strong);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .trust-cell h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--neutral-900);
+    margin: 0 0 4px;
+  }
+  .trust-cell p {
+    font-size: 13px;
+    color: var(--neutral-600);
+    margin: 0;
+    line-height: 18px;
+  }
+
+  /* === MOCKUPS === */
+  .mockup-frame {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--neutral-200);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .mockup-header {
+    background: var(--neutral-100);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--neutral-200);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mockup-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+  }
+  .mockup-dot.r { background: #FF5F56; }
+  .mockup-dot.y { background: #FFBD2E; }
+  .mockup-dot.g { background: #27C93F; }
+  .mockup-url {
+    margin-left: 16px;
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--neutral-600);
+    flex: 1;
+  }
+  .mockup-body {
+    background: var(--neutral-50);
+  }
+
+  /* Site nav inside mockup */
+  .site-nav {
+    background: white;
+    border-bottom: 1px solid var(--neutral-200);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .site-nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+  }
+  .site-nav-logo .form { color: var(--brand-primary); }
+  .site-nav-logo .ready { color: var(--brand-success); }
+  .site-nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  .site-nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--neutral-700);
+    text-decoration: none;
+  }
+  .site-nav-links a:hover { color: var(--brand-primary-press); }
+  .site-nav-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .lang-toggle {
+    font-size: 13px;
+    color: var(--neutral-500);
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--neutral-100);
+  }
+  .lang-toggle .active { color: var(--neutral-900); font-weight: 600; }
+
+  /* Saffron accent (only on Indian-keyword pages) */
+  .saffron-bar {
+    height: 4px;
+    background: var(--brand-tactical);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 32px;
+    text-align: center;
+    background: radial-gradient(ellipse at top, #EEF2FF 0%, var(--neutral-50) 60%);
+  }
+  .hero h1 {
+    font-size: 56px;
+    line-height: 60px;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin: 0 0 16px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .lede {
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--neutral-600);
+    max-width: 540px;
+    margin: 0 auto 32px;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  /* Saffron underline (Indian-keyword pages) */
+  .saffron-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .saffron-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    height: 6px;
+    background: var(--brand-tactical);
+    opacity: 0.85;
+    border-radius: 2px;
+    z-index: -1;
+  }
+
+  /* Tool cards */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 0 32px 64px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .tool-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+    transition: transform 200ms var(--ease-standard), box-shadow 200ms var(--ease-standard);
+    cursor: pointer;
+    border: 1px solid var(--neutral-200);
+  }
+  .tool-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .tool-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3D5AFE 0%, #0EA5E9 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .tool-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--neutral-900);
+  }
+  .tool-card p {
+    font-size: 13px;
+    color: var(--neutral-600);
+    margin: 0;
+    line-height: 18px;
+  }
+
+  /* File drop zone (the most important component) */
+  .drop-zone {
+    border: 2px dashed var(--neutral-300);
+    border-radius: 12px;
+    padding: 48px 32px;
+    background: var(--neutral-100);
+    text-align: center;
+    transition: border-color 150ms, background 150ms, box-shadow 200ms;
+  }
+  .drop-zone.active {
+    border-color: var(--brand-success);
+    border-style: solid;
+    background: var(--brand-success-soft-bg);
+    box-shadow: var(--shadow-xl);
+  }
+  .drop-zone-icon {
+    margin: 0 auto 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: white;
+    border: 2px dashed var(--brand-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-primary);
+    font-size: 24px;
+  }
+  .drop-zone h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--neutral-900);
+    margin: 0 0 4px;
+  }
+  .drop-zone p {
+    font-size: 14px;
+    color: var(--neutral-600);
+    margin: 0 0 16px;
+  }
+  .file-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--neutral-200);
+    text-align: left;
+  }
+  .file-row .name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--neutral-900);
+  }
+  .file-row .size {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--neutral-600);
+  }
+  .file-row .check {
+    color: var(--brand-success);
+    font-size: 18px;
+  }
+
+  /* KB target widget */
+  .kb-widget {
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .kb-widget-row {
+    display: flex;
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 16px;
+  }
+  .kb-input-wrap {
+    position: relative;
+    flex: 1;
+  }
+  .kb-input {
+    width: 100%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 500;
+    padding: 12px 64px 12px 16px;
+    border: 1px solid var(--neutral-300);
+    border-radius: 8px;
+    color: var(--neutral-900);
+  }
+  .kb-input:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: var(--shadow-focus);
+  }
+  .kb-suffix {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--neutral-500);
+  }
+
+  /* Result panel */
+  .result-panel {
+    background: linear-gradient(135deg, #ECFDF5 0%, #FFFFFF 100%);
+    border: 1px solid var(--brand-success-soft-bg);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+  }
+  .result-panel h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand-success-strong);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 8px;
+  }
+  .result-panel .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--neutral-900);
+    margin: 0 0 4px;
+    animation: spring 500ms var(--ease-soft-spring);
+  }
+  @keyframes spring {
+    0%   { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+  .result-panel .was {
+    font-size: 14px;
+    color: var(--neutral-600);
+  }
+
+  /* Footer */
+  .site-footer {
+    background: var(--neutral-900);
+    color: var(--neutral-300);
+    padding: 48px 32px 32px;
+  }
+  .site-footer-cols {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    max-width: 1080px;
+    margin: 0 auto 32px;
+  }
+  .site-footer-col h5 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 12px;
+  }
+  .site-footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .site-footer-col li {
+    margin-bottom: 8px;
+  }
+  .site-footer-col a {
+    color: var(--neutral-300);
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .site-footer-col a:hover { color: white; }
+  .site-footer-bottom {
+    border-top: 1px solid #1E293B;
+    padding-top: 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .site-footer-bottom .privacy-lockup {
+    color: var(--neutral-300);
+  }
+  .site-footer-bottom .privacy-lockup .verifiable-link {
+    color: #93C5FD;
+  }
+  .site-footer-bottom .copy {
+    font-size: 13px;
+    color: var(--neutral-500);
+  }
+
+  /* Saffron tactical chip on Indian-keyword pages */
+  .tactical-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand-tactical-soft);
+    color: #9A3412;
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 16px auto 0;
+  }
+
+  /* Spec table */
+  .spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+    text-align: left;
+  }
+  .spec-cell {
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .spec-cell .lbl {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .spec-cell .val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--neutral-900);
+  }
+
+  /* DevTools-style verify panel */
+  .devtools {
+    background: var(--neutral-900);
+    border-radius: 8px;
+    overflow: hidden;
+    color: #E2E8F0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    margin-top: 24px;
+  }
+  .devtools-header {
+    background: #1E293B;
+    padding: 8px 16px;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .devtools-tab {
+    color: #94A3B8;
+    font-size: 11px;
+  }
+  .devtools-tab.active {
+    color: white;
+    border-bottom: 2px solid var(--brand-primary);
+    padding-bottom: 4px;
+  }
+  .devtools-body {
+    padding: 16px;
+    min-height: 120px;
+    background: var(--neutral-900);
+  }
+  .devtools-empty {
+    color: var(--neutral-500);
+    font-size: 12px;
+    text-align: center;
+    padding: 24px;
+  }
+  .devtools-empty strong { color: var(--brand-success); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section { padding: 56px 16px; }
+    .section-title { font-size: 28px; line-height: 32px; }
+    .hero h1 { font-size: 36px; line-height: 40px; }
+    .wordmark { font-size: 56px; }
+    .site-footer-cols { grid-template-columns: 1fr 1fr; }
+    .trust-strip { grid-template-columns: 1fr; }
+    .type-row { grid-template-columns: 1fr; }
+    .site-nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="doc-nav">
+  <strong>FormReady — Brand Preview</strong>
+  <a href="#identity">Identity</a>
+  <a href="#color">Colour</a>
+  <a href="#type">Typography</a>
+  <a href="#components">Components</a>
+  <a href="#privacy">Privacy lockup</a>
+  <a href="#mockup-home">Homepage</a>
+  <a href="#mockup-ssc">SSC landing</a>
+  <a href="#mockup-visa">US visa landing</a>
+  <a href="#mockup-verify">Verify page</a>
+</nav>
+
+<!-- IDENTITY -->
+<section class="section" id="identity">
+  <div class="section-eyebrow">01 · Identity</div>
+  <h2 class="section-title">Wordmark, F-tile, tagline.</h2>
+  <p class="section-lede">Lowercase wordmark in two-tone — indigo for "form", green for "ready". The F-tile is the square symbol for app icons, favicons, and social avatars.</p>
+
+  <div class="identity-hero">
+    <h1 class="wordmark"><span class="form">form</span><span class="ready">ready</span></h1>
+    <p class="identity-tagline">Get your documents form-ready.</p>
+    <p class="identity-tagline-hi">आपके फॉर्म के लिए तैयार.</p>
+
+    <div class="ftile-row">
+      <div class="ftile">f</div>
+      <div class="ftile sm">f</div>
+      <div class="ftile xs">f</div>
+      <div style="text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--neutral-500);">
+        <div>96 px — app icon</div>
+        <div>48 px — header / social avatar</div>
+        <div>32 px — favicon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLOR -->
+<section class="section" id="color">
+  <div class="section-eyebrow">02 · Colour</div>
+  <h2 class="section-title">A disciplined palette.</h2>
+  <p class="section-lede">Indigo carries trust and primary action. Blue carries progress. Green carries success and privacy. Saffron tint is tactical — Indian-keyword pages only, max 5% surface.</p>
+
+  <div class="palette-group-title">Brand</div>
+  <div class="color-grid">
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #3D5AFE;"><span class="pin">#3D5AFE</span></div>
+      <div class="swatch-meta">
+        <p class="swatch-name">Form Indigo</p>
+        <p class="swatch-token">--brand-primary</p>
+        <p class="swatch-role">Primary CTAs, brand mark, focus rings, links.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #0EA5E9;"><span class="pin">#0EA5E9</span></div>
+      <div class="swatch-meta">
+        <p class="swatch-name">Precision Blue</p>
+        <p class="swatch-token">--brand-secondary</p>
+        <p class="swatch-role">Progress bars, info indicators, "exact KB" feature accent.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #10B981;"><span class="pin">#10B981</span></div>
+      <div class="swatch-meta">
+        <p class="swatch-name">Achievement Green</p>
+        <p class="swatch-token">--brand-success</p>
+        <p class="swatch-role">Success, file ready, privacy lockup padlock.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #F97316;"><span class="pin">#F97316</span></div>
+      <div class="swatch-meta">
+        <p class="swatch-name">Saffron Tint <span class="badge badge-tactical" style="font-size: 10px; padding: 1px 6px;">Tactical</span></p>
+        <p class="swatch-token">--brand-tactical</p>
+        <p class="swatch-role">SSC/UPSC/NEET landing pages only. Max 5% surface. Never on homepage or visa pages.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="palette-group-title">Semantic</div>
+  <div class="color-grid">
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #DC2626;"><span class="pin">#DC2626</span></div>
+      <div class="swatch-meta">
+        <p class="swatch-name">Danger</p>
+        <p class="swatch-token">--brand-danger</p>
+        <p class="swatch-role">Field errors, destructive confirms.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #F59E0B;"><span class="pin">#F59E0B</span></div>
+      <div class="swatch-meta">
+        <p class="swatch-name">Warning</p>
+        <p class="swatch-token">--brand-warning</p>
+        <p class="swatch-role">Spec-changed banners, validation warnings.</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #047857;"><span class="pin">#047857</span></div>
+      <div class="swatch-meta">
+        <p class="swatch-name">Success Strong</p>
+        <p class="swatch-token">--brand-success-strong</p>
+        <p class="swatch-role">Success text on light surfaces (AA on white).</p>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #2935A8;"><span class="pin">#2935A8</span></div>
+      <div class="swatch-meta">
+        <p class="swatch-name">Indigo Press</p>
+        <p class="swatch-token">--brand-primary-press</p>
+        <p class="swatch-role">Pressed state and link text on light (AAA).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="palette-group-title">Neutrals</div>
+  <div class="color-grid">
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #FFFBF5; border-bottom: 1px solid var(--neutral-200);"><span class="pin">#FFFBF5</span></div>
+      <div class="swatch-meta"><p class="swatch-name">Warm Off-white</p><p class="swatch-token">--neutral-25</p><p class="swatch-role">Long-form pages — blog, FAQ, help. Borrowed from Form Buddy direction.</p></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #F8FAFC; border-bottom: 1px solid var(--neutral-200);"><span class="pin">#F8FAFC</span></div>
+      <div class="swatch-meta"><p class="swatch-name">Page Background</p><p class="swatch-token">--neutral-50</p><p class="swatch-role">Default page surface.</p></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #475569;"><span class="pin">#475569</span></div>
+      <div class="swatch-meta"><p class="swatch-name">Body Secondary</p><p class="swatch-token">--neutral-600</p><p class="swatch-role">Lede text, secondary content.</p></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #0F172A;"><span class="pin">#0F172A</span></div>
+      <div class="swatch-meta"><p class="swatch-name">Body Default</p><p class="swatch-token">--neutral-900</p><p class="swatch-role">Body text default. AAA contrast on neutral-50.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section class="section" id="type">
+  <div class="section-eyebrow">03 · Typography</div>
+  <h2 class="section-title">Inter for English, Hind for Hindi, JetBrains Mono for numbers.</h2>
+  <p class="section-lede">A 1.250 modular scale anchored at 16px. Numbers that matter (KB, file sizes, progress) always run in mono — visual proof that the number is precise, not marketing.</p>
+
+  <div style="background: white; border: 1px solid var(--neutral-200); border-radius: 12px; padding: 32px;">
+    <div class="type-row">
+      <div class="type-meta"><span class="label">display-xl</span>60 / 64 / -0.03em / 700</div>
+      <div class="type-display-xl">Get your documents form-ready.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">display-lg</span>48 / 52 / -0.02em / 700</div>
+      <div class="type-display-lg">Compress PDF under 100KB</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">display-md</span>36 / 40 / -0.02em / 700</div>
+      <div class="type-display-md">Why FormReady is different</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">2xl</span>24 / 32 / -0.005em / 600</div>
+      <div class="type-2xl">SSC CGL Photo Specifications</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">xl</span>20 / 28 / 0 / 600</div>
+      <div class="type-xl">Drop your PDF or click to choose</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">lg lede</span>18 / 28 / 0 / 500</div>
+      <div class="type-lg">Type the exact KB. We hit it. Your file never leaves your device.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">base body</span>16 / 24 / 0 / 400</div>
+      <div class="type-base">FormReady accepts an exact target size in KB as the primary input. The user enters "100KB," uploads a file, and the tool iteratively compresses until it lands at or below that target — no guessing, no re-uploading, no DPI math.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">sm helper</span>14 / 20 / 0 / 400</div>
+      <div class="type-sm">Specs from ssc.nic.in (verified Mar 2026)</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">mono — KB</span>JetBrains Mono / 24 / 500</div>
+      <div class="type-mono">98KB · was 2.4MB · -96%</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">Hind 600 — Hindi</span>हिन्दी (Devanagari)</div>
+      <div class="type-display-md hindi" style="font-weight: 600;">आपके फॉर्म के लिए तैयार</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="label">Hind 400 — body Hi</span>16 / 26 / 400</div>
+      <div class="hindi" style="font-size: 16px; line-height: 26px;">100KB से कम साइज़ चाहिए? बस फ़ाइल ड्रॉप करें — हम बाकी संभाल लेंगे। आपकी फ़ाइल आपके फ़ोन से बाहर नहीं जाती।</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section class="section" id="components">
+  <div class="section-eyebrow">04 · Components</div>
+  <h2 class="section-title">Buttons, inputs, badges, the file-drop zone.</h2>
+  <p class="section-lede">Primary indigo CTA per page. Green for download / success. Saffron never touches buttons — it stays decorative, on Indian-keyword pages only.</p>
+
+  <div class="components-grid">
+    <div class="component-card">
+      <p class="component-label">Buttons</p>
+      <div class="button-row">
+        <button class="btn btn-primary">Compress to 100KB</button>
+        <button class="btn btn-secondary">Try image</button>
+        <button class="btn btn-ghost">Cancel</button>
+      </div>
+      <div class="button-row" style="margin-top: 12px;">
+        <button class="btn btn-success">⬇ Download (98KB)</button>
+        <button class="btn btn-danger">Delete account</button>
+        <a class="btn btn-link">Learn more →</a>
+      </div>
+      <div class="button-row" style="margin-top: 16px;">
+        <button class="btn btn-primary-glow">Get started — it's free</button>
+      </div>
+    </div>
+
+    <div class="component-card">
+      <p class="component-label">Inputs</p>
+      <div class="input-stack">
+        <label class="input-label">Email</label>
+        <input class="input" type="email" placeholder="you@example.com" value="aspirant@gmail.com" />
+        <p class="input-helper">We'll never spam.</p>
+      </div>
+      <div class="input-stack" style="margin-top: 16px;">
+        <label class="input-label">Target size</label>
+        <input class="input kb-target" type="text" value="100" />
+        <p class="input-helper">JetBrains Mono — emphasizes precision.</p>
+      </div>
+    </div>
+
+    <div class="component-card">
+      <p class="component-label">Preset chips</p>
+      <p style="font-size: 13px; color: var(--neutral-600); margin: 0 0 12px;">Common KB targets, one-click apply.</p>
+      <div class="preset-row">
+        <button class="chip">100</button>
+        <button class="chip active">200</button>
+        <button class="chip">500</button>
+        <button class="chip">1000</button>
+        <button class="chip">2000</button>
+      </div>
+    </div>
+
+    <div class="component-card">
+      <p class="component-label">Badges</p>
+      <div class="button-row">
+        <span class="badge badge-success">✓ File ready</span>
+        <span class="badge badge-info">PDF · 98KB</span>
+        <span class="badge badge-warning">⚠ Spec changed</span>
+        <span class="badge badge-danger">✗ Too large</span>
+        <span class="badge badge-neutral">Optional</span>
+      </div>
+      <p style="font-size: 12px; color: var(--neutral-500); margin: 12px 0 4px;">Tactical (Indian-keyword pages only):</p>
+      <span class="badge badge-tactical">Updated for 2026 SSC notification</span>
+    </div>
+
+    <div class="component-card">
+      <p class="component-label">File drop zone — resting</p>
+      <div class="drop-zone">
+        <div class="drop-zone-icon">+</div>
+        <h4>Drop your PDF here</h4>
+        <p>or click to browse · max 50MB</p>
+        <button class="btn btn-secondary" style="font-size: 13px;">Choose file</button>
+      </div>
+    </div>
+
+    <div class="component-card">
+      <p class="component-label">File drop zone — file selected</p>
+      <div class="drop-zone active">
+        <div class="file-row">
+          <span style="font-size: 18px;">📄</span>
+          <span class="name">applicant_marksheet.pdf</span>
+          <span class="size">2.4 MB</span>
+          <span class="check">✓</span>
+        </div>
+        <p style="font-size: 13px; color: var(--brand-success-strong); margin: 12px 0 0; font-weight: 500;">Ready to compress.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY LOCKUP -->
+<section class="section" id="privacy">
+  <div class="section-eyebrow">05 · Privacy lockup</div>
+  <h2 class="section-title">The most brand-load-bearing micro-component.</h2>
+  <p class="section-lede">Carries the privacy USP on every single page. Three placements: footer, below the file-drop zone, and as an expanded trust strip on the homepage.</p>
+
+  <div style="background: white; border: 1px solid var(--neutral-200); border-radius: 12px; padding: 32px; margin-bottom: 24px;">
+    <p class="component-label">Compact (footer + below file-drop)</p>
+    <div class="privacy-lockup">
+      <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Compressed locally · No upload · <a href="#" class="verifiable-link">Verifiable</a>
+    </div>
+  </div>
+
+  <p class="component-label" style="margin-bottom: 12px;">Expanded trust strip (homepage hero)</p>
+  <div class="trust-strip">
+    <div class="trust-cell">
+      <div class="ico">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <h4>100% Browser</h4>
+      <p>Your file is compressed in the browser via WebAssembly. Nothing transmitted.</p>
+    </div>
+    <div class="trust-cell">
+      <div class="ico">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+      </div>
+      <h4>Never Uploaded</h4>
+      <p>We don't run servers that touch your file. By design, not by promise.</p>
+    </div>
+    <div class="trust-cell">
+      <div class="ico">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h4>Verify Yourself</h4>
+      <p>Open DevTools, watch the Network tab. Zero outbound requests. <a href="#mockup-verify" style="color: var(--brand-primary-press);">See how →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUP: HOMEPAGE -->
+<section class="section" id="mockup-home">
+  <div class="section-eyebrow">06 · Mockup — Homepage</div>
+  <h2 class="section-title">formready.in · Homepage</h2>
+  <p class="section-lede">Hero · 4 tool cards · trust strip · footer with privacy lockup. No saffron tint anywhere.</p>
+
+  <div class="mockup-frame">
+    <div class="mockup-header">
+      <span class="mockup-dot r"></span><span class="mockup-dot y"></span><span class="mockup-dot g"></span>
+      <span class="mockup-url">https://formready.in</span>
+    </div>
+    <div class="mockup-body">
+      <nav class="site-nav">
+        <div class="site-nav-left">
+          <span class="site-nav-logo"><span class="form">form</span><span class="ready">ready</span></span>
+          <div class="site-nav-links">
+            <a>PDF</a><a>Image</a><a>Photo & Signature</a><a>Pricing</a><a>API</a>
+          </div>
+        </div>
+        <div class="site-nav-right">
+          <span class="lang-toggle"><span class="active">EN</span> · हिं</span>
+          <button class="btn btn-ghost" style="font-size: 13px;">Log in</button>
+          <button class="btn btn-primary" style="font-size: 13px;">Try Pro free</button>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <h1>Get your documents form-ready.</h1>
+        <p class="lede">Type the exact KB. We hit it. Your file never leaves your device.</p>
+        <div class="hero-cta-row">
+          <button class="btn btn-primary-glow">Compress a PDF →</button>
+          <button class="btn btn-ghost" style="padding: 14px 24px;">Compress an image</button>
+        </div>
+        <div class="privacy-lockup" style="justify-content: center;">
+          <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Stays on your device. <a href="#" class="verifiable-link">Verify yourself →</a>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+        <div class="tool-card">
+          <div class="tool-card-icon">PDF</div>
+          <h3>PDF Compression</h3>
+          <p>Hit any KB target. Up to 50 MB input.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card-icon" style="background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);">IMG</div>
+          <h3>Image Compression</h3>
+          <p>JPG / PNG / HEIC / WebP. Up to 25 MB.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card-icon" style="background: linear-gradient(135deg, #3D5AFE 0%, #2935A8 100%);">📷</div>
+          <h3>Exam & Visa Photo</h3>
+          <p>Pre-set for SSC, UPSC, NEET, US, UK, Schengen.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card-icon" style="background: linear-gradient(135deg, #10B981 0%, #047857 100%);">✎</div>
+          <h3>Signature Resize</h3>
+          <p>Down to 5 KB. Background cleanup included.</p>
+        </div>
+      </div>
+
+      <div style="padding: 0 32px 64px; max-width: 1080px; margin: 0 auto;">
+        <div class="trust-strip">
+          <div class="trust-cell">
+            <div class="ico">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h4>100% Browser</h4>
+            <p>Compressed via WebAssembly, on your device.</p>
+          </div>
+          <div class="trust-cell">
+            <div class="ico">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            </div>
+            <h4>Never Uploaded</h4>
+            <p>We have no servers that touch your file.</p>
+          </div>
+          <div class="trust-cell">
+            <div class="ico">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4>Verify Yourself</h4>
+            <p>Open DevTools. See zero requests during compression.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="site-footer-cols">
+          <div class="site-footer-col">
+            <span class="site-nav-logo" style="color: white;"><span class="form">form</span><span class="ready">ready</span></span>
+            <p style="font-size: 14px; color: var(--neutral-400); margin: 12px 0 0; max-width: 320px;">Privacy-first PDF and image compression for Indian forms, exams, and visa applications.</p>
+          </div>
+          <div class="site-footer-col">
+            <h5>Tools</h5>
+            <ul><li><a>PDF</a></li><li><a>Image</a></li><li><a>Photo</a></li><li><a>Signature</a></li></ul>
+          </div>
+          <div class="site-footer-col">
+            <h5>Pages</h5>
+            <ul><li><a>SSC CGL</a></li><li><a>UPSC CSE</a></li><li><a>NEET UG</a></li><li><a>US visa</a></li></ul>
+          </div>
+          <div class="site-footer-col">
+            <h5>Company</h5>
+            <ul><li><a>Privacy</a></li><li><a>Terms</a></li><li><a>DPDP</a></li><li><a>API docs</a></li></ul>
+          </div>
+        </div>
+        <div class="site-footer-bottom">
+          <div class="privacy-lockup">
+            <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Compressed locally · No upload · <a href="#" class="verifiable-link">Verifiable</a>
+          </div>
+          <p class="copy">© 2026 FormReady · Made in India 🇮🇳</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUP: SSC LANDING (saffron tactical) -->
+<section class="section" id="mockup-ssc">
+  <div class="section-eyebrow">07 · Mockup — Indian-keyword landing</div>
+  <h2 class="section-title">/ssc-cgl-photo-size · Saffron tactical</h2>
+  <p class="section-lede">SSC CGL landing page demonstrates the controlled saffron-tint usage: 4px top accent bar, H1 keyword underline, source-citation chip. Total saffron surface stays under 5%.</p>
+
+  <div class="mockup-frame">
+    <div class="mockup-header">
+      <span class="mockup-dot r"></span><span class="mockup-dot y"></span><span class="mockup-dot g"></span>
+      <span class="mockup-url">https://formready.in/ssc-cgl-photo-size</span>
+    </div>
+    <div class="mockup-body">
+      <div class="saffron-bar"></div>
+      <nav class="site-nav">
+        <div class="site-nav-left">
+          <span class="site-nav-logo"><span class="form">form</span><span class="ready">ready</span></span>
+          <div class="site-nav-links">
+            <a>PDF</a><a>Image</a><a>Photo & Signature</a><a>Pricing</a>
+          </div>
+        </div>
+        <div class="site-nav-right">
+          <span class="lang-toggle"><span class="active">EN</span> · हिं</span>
+          <button class="btn btn-primary" style="font-size: 13px;">Try Pro free</button>
+        </div>
+      </nav>
+
+      <div style="padding: 64px 32px; max-width: 880px; margin: 0 auto; text-align: center;">
+        <h1 style="font-size: 48px; line-height: 52px; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 16px;">
+          SSC CGL <span class="saffron-underline">Photo Size</span>
+        </h1>
+        <p style="font-size: 18px; line-height: 28px; color: var(--neutral-600); max-width: 600px; margin: 0 auto 16px;">
+          SSC CGL needs your photo at 200×230 px and 20–50 KB. Drop yours below — we'll resize and compress to spec.
+        </p>
+        <div class="tactical-chip">
+          <span style="font-size: 14px;">●</span> Updated for 2026 SSC notification (Mar 12)
+        </div>
+
+        <div class="spec-grid">
+          <div class="spec-cell"><div class="lbl">Dimensions</div><div class="val">200 × 230 px</div></div>
+          <div class="spec-cell"><div class="lbl">Size range</div><div class="val">20 – 50 KB</div></div>
+          <div class="spec-cell"><div class="lbl">Format</div><div class="val">JPG</div></div>
+          <div class="spec-cell"><div class="lbl">Background</div><div class="val">White</div></div>
+        </div>
+
+        <div class="drop-zone" style="text-align: center;">
+          <div class="drop-zone-icon">+</div>
+          <h4>Drop your photo</h4>
+          <p>JPG · PNG · HEIC · max 25 MB</p>
+          <button class="btn btn-primary">Choose file</button>
+        </div>
+
+        <div class="kb-widget" style="text-align: left;">
+          <p style="font-size: 13px; font-weight: 600; color: var(--neutral-700); margin: 0 0 12px;">Target size (auto-set for SSC CGL)</p>
+          <div class="kb-widget-row">
+            <div class="kb-input-wrap">
+              <input class="kb-input" type="text" value="40" />
+              <span class="kb-suffix">KB</span>
+            </div>
+            <button class="btn btn-primary" style="padding: 14px 24px;">Resize & compress</button>
+          </div>
+          <div class="preset-row">
+            <button class="chip">20</button>
+            <button class="chip active">40</button>
+            <button class="chip">50</button>
+          </div>
+        </div>
+
+        <div class="privacy-lockup" style="justify-content: center; margin-top: 24px;">
+          <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Stays on your device. <a href="#" class="verifiable-link">Verify yourself →</a>
+        </div>
+
+        <p style="font-size: 13px; color: var(--neutral-500); margin-top: 32px;">
+          Source: <a href="https://ssc.nic.in" style="color: var(--brand-tactical); text-decoration: none; font-weight: 500;">ssc.nic.in</a> · verified March 2026
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUP: US VISA (no saffron) -->
+<section class="section" id="mockup-visa">
+  <div class="section-eyebrow">08 · Mockup — Visa landing (no saffron)</div>
+  <h2 class="section-title">/us-visa-photo-size · Neutral, precise</h2>
+  <p class="section-lede">Same product, different audience. US visa pages stay completely neutral — no saffron accent, slightly more formal copy. Demonstrates the brand's modular discipline.</p>
+
+  <div class="mockup-frame">
+    <div class="mockup-header">
+      <span class="mockup-dot r"></span><span class="mockup-dot y"></span><span class="mockup-dot g"></span>
+      <span class="mockup-url">https://formready.in/us-visa-photo-size</span>
+    </div>
+    <div class="mockup-body">
+      <nav class="site-nav">
+        <div class="site-nav-left">
+          <span class="site-nav-logo"><span class="form">form</span><span class="ready">ready</span></span>
+          <div class="site-nav-links">
+            <a>PDF</a><a>Image</a><a>Photo & Signature</a><a>Pricing</a>
+          </div>
+        </div>
+        <div class="site-nav-right">
+          <span class="lang-toggle"><span class="active">EN</span> · हिं</span>
+          <button class="btn btn-primary" style="font-size: 13px;">Try Pro free</button>
+        </div>
+      </nav>
+
+      <div style="padding: 64px 32px; max-width: 880px; margin: 0 auto; text-align: center;">
+        <h1 style="font-size: 48px; line-height: 52px; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 16px;">US Visa Photo Size</h1>
+        <p style="font-size: 18px; line-height: 28px; color: var(--neutral-600); max-width: 600px; margin: 0 auto 24px;">
+          US B1/B2 visas require 600×600 px with the head taking 50–69% of the frame. Drop your photo, we'll auto-resize and compress to spec.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-cell"><div class="lbl">Dimensions</div><div class="val">600 × 600 px</div></div>
+          <div class="spec-cell"><div class="lbl">Max size</div><div class="val">240 KB</div></div>
+          <div class="spec-cell"><div class="lbl">Head height</div><div class="val">50 – 69 %</div></div>
+          <div class="spec-cell"><div class="lbl">Background</div><div class="val">Plain white</div></div>
+        </div>
+
+        <div class="drop-zone" style="text-align: center;">
+          <div class="drop-zone-icon">+</div>
+          <h4>Drop your photo</h4>
+          <p>JPG · PNG · HEIC · max 25 MB</p>
+          <button class="btn btn-primary">Choose file</button>
+        </div>
+
+        <div class="privacy-lockup" style="justify-content: center; margin-top: 24px;">
+          <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Stays on your device. <a href="#" class="verifiable-link">Verify yourself →</a>
+        </div>
+
+        <p style="font-size: 13px; color: var(--neutral-500); margin-top: 32px;">
+          We help you meet specs but cannot guarantee acceptance — final decision rests with the consulate.
+        </p>
+        <p style="font-size: 13px; color: var(--neutral-500); margin-top: 8px;">
+          Source: <a href="https://travel.state.gov" style="color: var(--brand-primary-press); text-decoration: none; font-weight: 500;">travel.state.gov</a> · verified April 2026
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUP: VERIFY PAGE -->
+<section class="section" id="mockup-verify">
+  <div class="section-eyebrow">09 · Mockup — Privacy Verify</div>
+  <h2 class="section-title">/privacy/verify · See for yourself</h2>
+  <p class="section-lede">The page that proves the privacy claim. Shows live DevTools-style network monitoring during a real compress operation. The privacy lockup links here from every page.</p>
+
+  <div class="mockup-frame">
+    <div class="mockup-header">
+      <span class="mockup-dot r"></span><span class="mockup-dot y"></span><span class="mockup-dot g"></span>
+      <span class="mockup-url">https://formready.in/privacy/verify</span>
+    </div>
+    <div class="mockup-body">
+      <nav class="site-nav">
+        <div class="site-nav-left">
+          <span class="site-nav-logo"><span class="form">form</span><span class="ready">ready</span></span>
+        </div>
+        <div class="site-nav-right">
+          <button class="btn btn-ghost" style="font-size: 13px;">← Back</button>
+        </div>
+      </nav>
+
+      <div style="padding: 64px 32px; max-width: 720px; margin: 0 auto;">
+        <span class="badge badge-success" style="margin-bottom: 16px;">🔒 Privacy proof</span>
+        <h1 style="font-size: 48px; line-height: 52px; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 16px;">See for yourself.</h1>
+        <p style="font-size: 18px; line-height: 28px; color: var(--neutral-600); margin: 0 0 32px;">
+          We say files never leave your device. Here's how to confirm it in 30 seconds.
+        </p>
+
+        <ol style="padding-left: 24px; color: var(--neutral-700); font-size: 16px; line-height: 28px;">
+          <li>Open DevTools (<span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; background: var(--neutral-100); padding: 2px 6px; border-radius: 4px;">⌘ Opt I</span> on Mac · <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; background: var(--neutral-100); padding: 2px 6px; border-radius: 4px;">Ctrl Shift I</span> on Windows)</li>
+          <li>Click the <strong>Network</strong> tab</li>
+          <li>Click "Compress sample PDF" below</li>
+          <li>Watch the Network tab. Zero new requests.</li>
+        </ol>
+
+        <button class="btn btn-primary-glow" style="margin: 24px 0 16px;">Compress sample PDF →</button>
+
+        <div class="devtools">
+          <div class="devtools-header">
+            <span class="devtools-tab">Elements</span>
+            <span class="devtools-tab">Console</span>
+            <span class="devtools-tab active">Network</span>
+            <span class="devtools-tab">Sources</span>
+            <span class="devtools-tab">Performance</span>
+          </div>
+          <div class="devtools-body">
+            <div class="devtools-empty">
+              <strong>0 requests</strong> · 0 B transferred<br>
+              <span style="margin-top: 8px; display: block;">Recording network activity… Click anywhere to start.</span>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 14px; color: var(--neutral-500); margin: 24px 0 0;">
+          You can also <a href="#" style="color: var(--brand-primary-press); font-weight: 500;">read the open-source compression module on GitHub →</a>
+        </p>
+
+        <div class="privacy-lockup" style="margin-top: 48px;">
+          <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Compressed locally · No upload · This page itself is the proof
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="section" style="text-align: center; background: linear-gradient(180deg, var(--neutral-50) 0%, #EEF2FF 100%);">
+  <div class="section-eyebrow">End of brand preview</div>
+  <h2 class="section-title">That's the brand.</h2>
+  <p class="section-lede" style="margin-left: auto; margin-right: auto;">
+    Capable, calm, native-modern, privacy-first. Carrying Razorpay-grade polish, Form-Buddy warmth on long-form pages, Vault-grade privacy lockup, and tactical Bharat saffron-tint on SSC/UPSC/NEET landing pages.
+  </p>
+  <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--neutral-500); margin-top: 32px;">
+    BRAND_GUIDELINES.md · brand/tokens.ts · brand/tokens.css · brand/preview.html
+  </p>
+</section>
+
+</body>
+</html>
