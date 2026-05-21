@@ -27,7 +27,6 @@ yarn-error.log*
 
 # Local env
 .env*.local
-.env
 
 # Vercel
 .vercel
@@ -45,3 +44,4 @@ next-env.d.ts
 .netlify
 temp_auto_push.bat
 temp_interactive_push.bat
+config.bat
