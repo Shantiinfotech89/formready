@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 interface WordmarkProps extends React.HTMLAttributes<HTMLSpanElement> {
@@ -5,25 +6,31 @@ interface WordmarkProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const sizeClasses: Record<NonNullable<WordmarkProps['size']>, string> = {
-  sm: 'text-lg',
-  md: 'text-xl',
-  lg: 'text-display-md',
-  xl: 'text-display-xl',
+  sm: 'h-7 w-[144px]',
+  md: 'h-8 w-[164px]',
+  lg: 'h-10 w-[205px]',
+  xl: 'h-12 w-[246px]',
 }
 
 export function Wordmark({ size = 'md', className, ...props }: WordmarkProps) {
   return (
     <span
       className={cn(
-        'inline-flex font-sans font-bold tracking-[-0.02em] leading-none select-none',
+        'relative inline-flex shrink-0 select-none',
         sizeClasses[size],
         className,
       )}
       aria-label="FormReady"
       {...props}
     >
-      <span className="text-primary">form</span>
-      <span className="text-success">ready</span>
+      <Image
+        src="/logo-header.png"
+        alt="Compress 4"
+        fill
+        sizes="(max-width: 768px) 144px, 164px"
+        className="object-contain"
+        priority
+      />
     </span>
   )
 }
