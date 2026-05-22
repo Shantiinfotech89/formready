@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 export const metadata: Metadata = {
   title: 'Audit the Routes',
   description:
-    'Verify that FormReady has no upload endpoints, no hidden APIs, and no cloud storage. Every claim is checkable in your browser with DevTools.',
+    'Verify that Compress4 has no upload endpoints, no hidden APIs, and no cloud storage. Every claim is checkable in your browser with DevTools.',
   alternates: { canonical: '/security/routes-audit' },
 }
 
@@ -39,7 +39,7 @@ const features = [
 
 const routes = [
   { method: 'GET', path: '/', description: 'Home page' },
-  { method: 'GET', path: '/about', description: 'About FormReady' },
+  { method: 'GET', path: '/about', description: 'About Compress4' },
   { method: 'GET', path: '/compress-pdf', description: 'PDF compression tool' },
   { method: 'GET', path: '/compress-image', description: 'Image compression tool' },
   { method: 'GET', path: '/crop-rotate', description: 'Crop & rotate tool' },

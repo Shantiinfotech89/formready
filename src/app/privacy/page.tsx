@@ -5,7 +5,7 @@ import { LegalPageShell } from '@/components/legal/legal-page-shell'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'How FormReady handles personal data — and why most files never reach us in the first place. DPDP Act 2023 and GDPR compliant.',
+    'How Compress4 handles personal data — and why most files never reach us in the first place. DPDP Act 2023 and GDPR compliant.',
   alternates: { canonical: '/privacy' },
 }
 
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
     >
       <div className="rounded-lg border border-success-soft bg-success-soft/40 p-5 not-prose mb-8">
         <p className="text-sm text-success-strong">
-          <strong>Plain-language summary.</strong> File compression runs in your browser — your file is never transmitted to FormReady. We collect anonymous usage counters and (for Pro accounts) the minimum needed to bill you. We don&apos;t sell data. You can verify the no-upload claim yourself at{' '}
+          <strong>Plain-language summary.</strong> File compression runs in your browser — your file is never transmitted to Compress4. We collect anonymous usage counters and (for Pro accounts) the minimum needed to bill you. We don&apos;t sell data. You can verify the no-upload claim yourself at{' '}
           <Link href="/privacy/verify" className="font-semibold underline underline-offset-4">/privacy/verify</Link>.
         </p>
       </div>
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
 
       <h2>1. Who we are</h2>
       <p>
-        FormReady is operated by [LEGAL ENTITY NAME — e.g., FormReady Technologies Pvt Ltd] (referred to as &quot;FormReady&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), a company registered in India with its principal office at [REGISTERED ADDRESS]. Our domain is <code>formready.in</code>.
+        Compress4 is operated by [LEGAL ENTITY NAME — e.g., Compress4 Technologies Pvt Ltd] (referred to as &quot;Compress4&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), a company registered in India with its principal office at [REGISTERED ADDRESS]. Our domain is <code>compress4.com</code>.
       </p>
       <p>
         For questions about this policy or any privacy matter, contact our Grievance Officer:{' '}
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
 
       <h2>2. The architecture-first promise</h2>
       <p>
-        FormReady is designed so that personal data minimisation is structural, not optional. The compression engine runs entirely in your browser via WebAssembly and Canvas APIs. <strong>The file you upload to a tool never leaves your device</strong>. There is no server endpoint that receives file content. You can verify this by opening your browser&apos;s DevTools → Network tab while compressing — zero outbound file requests will be visible. We provide a live demonstration at <Link href="/privacy/verify">/privacy/verify</Link>.
+        Compress4 is designed so that personal data minimisation is structural, not optional. The compression engine runs entirely in your browser via WebAssembly and Canvas APIs. <strong>The file you upload to a tool never leaves your device</strong>. There is no server endpoint that receives file content. You can verify this by opening your browser&apos;s DevTools → Network tab while compressing — zero outbound file requests will be visible. We provide a live demonstration at <Link href="/privacy/verify">/privacy/verify</Link>.
       </p>
 
       <h2>3. What we collect — and don&apos;t</h2>
@@ -77,7 +77,7 @@ export default function PrivacyPage() {
 
       <h2>5. Third parties we share data with</h2>
       <p>
-        We only share data with services strictly necessary to operate FormReady. Each is contractually bound to use the data only for the purpose listed:
+        We only share data with services strictly necessary to operate Compress4. Each is contractually bound to use the data only for the purpose listed:
       </p>
       <ul>
         <li><strong>Google Identity</strong> — to authenticate Pro users via OAuth. Only your email, display name, and profile photo URL are received.</li>
@@ -125,7 +125,7 @@ export default function PrivacyPage() {
 
       <h2>10. Children</h2>
       <p>
-        Our services are intended for users 13 years of age or older. If you are under the age of majority in your jurisdiction, you may use FormReady only with the consent and supervision of a parent or guardian. We do not knowingly collect personal data from children under 13.
+        Our services are intended for users 13 years of age or older. If you are under the age of majority in your jurisdiction, you may use Compress4 only with the consent and supervision of a parent or guardian. We do not knowingly collect personal data from children under 13.
       </p>
 
       <h2>11. International transfers</h2>

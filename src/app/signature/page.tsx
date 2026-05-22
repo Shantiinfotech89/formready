@@ -131,7 +131,7 @@ export default function SignaturePage() {
             <MiniTrustComparison
               themLabel="Online signature compressors uploaded your signature"
               themDescription="A signature is a legal artifact — and most online tools route it through their server before compressing. Even with claimed deletion windows, your signature briefly sits on infrastructure you don't control."
-              usLabel="FormReady processed your signature locally"
+              usLabel="Compress4 processed your signature locally"
               usDescription="Grayscale conversion, threshold cleanup, and JPEG encoding all ran in your browser. The signature image never touched our servers — and the actual ink stroke is unchanged, only background noise was cleaned."
             />
           </RevealOnScroll>

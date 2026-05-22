@@ -20,7 +20,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-8">
           <Link
             href="/"
-            aria-label="FormReady — home"
+            aria-label="Compress4 — home"
             className="rounded-sm focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/30 focus-visible:ring-offset-2"
           >
             <Wordmark size="md" />

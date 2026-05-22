@@ -17,7 +17,7 @@ export const faqCategoryLabels: Record<FaqCategory, string> = {
 
 export const faqCategoryDescriptions: Record<FaqCategory, string> = {
   privacy: 'How your files stay on your device.',
-  'how-to': 'Practical guidance on using FormReady.',
+  'how-to': 'Practical guidance on using Compress4.',
   'exam-specs': 'Photo and signature rules for Indian exams.',
   'visa-specs': 'Photo specifications for visa applications.',
 }

@@ -7,9 +7,11 @@ import { FaqSection } from '@/components/landing/faq-section'
 import { faqCategoryDescriptions, faqCategoryLabels, faqItems, type FaqCategory } from '@/lib/faq'
 
 export const metadata: Metadata = {
-  title: 'FAQ — Privacy, exam specs, visa specs, Pro tier',
+  title: {
+    absolute: 'Frequently Asked Questions: How It Works | Compress4',
+  },
   description:
-    'Real questions from real users. Privacy mechanics, how to hit exact KB, exam specifications for SSC/UPSC/NEET, visa specs for US/UK/Schengen, Pro plan details.',
+    'Learn how our local browser-based compression hits exact KB limits, handles HEIC files, and strips photo EXIF metadata safely without ever uploading to a cloud.',
   alternates: { canonical: '/faq' },
 }
 
@@ -98,18 +100,37 @@ export default function FaqPage() {
       </main>
       <SiteFooter />
 
-      {/* FAQPage JSON-LD with all questions */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
+            '@graph': [
+              {
+                '@type': 'WebSite',
+                '@id': 'https://compress4.com/#website',
+                url: 'https://compress4.com/',
+                name: 'Compress4',
+                alternateName: 'FormReady',
+                potentialAction: {
+                  '@type': 'SearchAction',
+                  target: {
+                    '@type': 'EntryPoint',
+                    urlTemplate: 'https://compress4.com/?s={search_term_string}',
+                  },
+                  'query-input': 'required name=search_term_string',
+                },
+              },
+              {
+                '@type': 'FAQPage',
+                '@id': 'https://compress4.com/faq/#faq',
+                mainEntity: faqItems.map((f) => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              },
+            ],
           }),
         }}
       />

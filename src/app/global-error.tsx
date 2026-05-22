@@ -35,7 +35,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             500
           </p>
           <h1 style={{ fontSize: 28, fontWeight: 700, marginTop: 24, lineHeight: 1.2 }}>
-            FormReady failed to load.
+            Compress4 failed to load.
           </h1>
           <p style={{ fontSize: 16, color: '#475569', marginTop: 16, lineHeight: 1.6 }}>
             The application crashed before it could render. Refresh to try again. If the problem persists, email{' '}

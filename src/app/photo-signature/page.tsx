@@ -52,9 +52,11 @@ const useCases: UseCase[] = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Exam & Visa Photo — never uploaded',
+  title: {
+    absolute: 'Photo & Signature Compressor for Indian Exams | Compress4',
+  },
   description:
-    'Form-ready photo and signature in one shot — pre-configured for SSC, UPSC, NEET, JEE, IBPS, GATE, US visa, UK visa, Schengen, Canada. Your photo is processed entirely in your browser. No upload.',
+    'Resize and compress photos and signatures to official pixel and KB specs. Get instant presets for SSC CGL, UPSC, NEET, IBPS, and US/UK Visa applications.',
   alternates: { canonical: '/photo-signature' },
 }
 
@@ -128,7 +130,7 @@ export default function PhotoSignaturePage() {
             <MiniTrustComparison
               themLabel="Most online photo resizers uploaded your face"
               themDescription="Tools like ResizeImage, iLovePDF, photo-resizer-online require you to upload before they crop and compress. Your face transited the public internet — and stayed on their disk for some retention window."
-              usLabel="FormReady processed your photo locally"
+              usLabel="Compress4 processed your photo locally"
               usDescription="Your face never reached our servers. Center-crop, resize, and compression all ran in your browser via WebAssembly + Canvas. Your photo is the most sensitive thing on this site — and it stayed on your phone."
             />
           </RevealOnScroll>
@@ -185,12 +187,41 @@ export default function PhotoSignaturePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
+            '@graph': [
+              {
+                '@type': 'SoftwareApplication',
+                '@id': 'https://compress4.com/photo-signature/#software',
+                name: 'Compress4 Photo & Signature Compressor',
+                url: 'https://compress4.com/photo-signature',
+                applicationCategory: 'UtilitiesApplication',
+                operatingSystem: 'All',
+                description:
+                  'Online photo and signature resizer tailored for Indian Government Exams (SSC, UPSC, NEET, IBPS) and Visa applications. Formats images to exact official pixel dimensions and KB targets entirely within the browser.',
+              },
+              {
+                '@type': 'WebSite',
+                '@id': 'https://compress4.com/#website',
+                url: 'https://compress4.com/',
+                name: 'Compress4',
+                potentialAction: {
+                  '@type': 'SearchAction',
+                  target: {
+                    '@type': 'EntryPoint',
+                    urlTemplate: 'https://compress4.com/?s={search_term_string}',
+                  },
+                  'query-input': 'required name=search_term_string',
+                },
+              },
+              {
+                '@type': 'FAQPage',
+                '@id': 'https://compress4.com/photo-signature/#faq',
+                mainEntity: faqs.map((f) => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              },
+            ],
           }),
         }}
       />

@@ -47,9 +47,12 @@ const useCases: UseCase[] = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Compress image without uploading it',
+  title: {
+    absolute:
+      'Best Image Compressor: Reduce JPEG & PNG Online | Compress4',
+  },
   description:
-    'Compress JPG, PNG, WebP, or HEIC to the exact KB your form needs — passport photos, ID copies, screenshots. All compression in your browser. No upload, ever.',
+    'Reduce image size to exact limits for Naukri, LinkedIn, Passport Seva, & Aadhaar forms. Compress JPEG/PNG to 50kb or 100kb free without losing photo quality.',
   alternates: { canonical: '/compress-image' },
 }
 
@@ -123,8 +126,8 @@ export default function CompressImagePage() {
             <MiniTrustComparison
               themLabel="iLovePDF, TinyPNG, Squoosh uploaded your image"
               themDescription="Their server received your photo, processed it, and (depending on which tool) held it temporarily. Your face, ID, or screenshot transited the public internet."
-              usLabel="FormReady processed your image locally"
-              usDescription="A Web Worker on your device compressed it via the browser's built-in encoders. Your image never touched any FormReady server — and EXIF metadata (location, camera, timestamps) was naturally stripped during re-encoding."
+              usLabel="Compress4 processed your image locally"
+              usDescription="A Web Worker on your device compressed it via the browser's built-in encoders. Your image never touched any Compress4 server — and EXIF metadata (location, camera, timestamps) was naturally stripped during re-encoding."
             />
           </RevealOnScroll>
         </section>
@@ -180,12 +183,41 @@ export default function CompressImagePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
+            '@graph': [
+              {
+                '@type': 'SoftwareApplication',
+                '@id': 'https://compress4.com/compress-image/#software',
+                name: 'Compress4 Image Compressor',
+                url: 'https://compress4.com/compress-image',
+                applicationCategory: 'UtilitiesApplication',
+                operatingSystem: 'All',
+                description:
+                  'A browser-based image compression tool that reduces JPEG, PNG, and HEIC file sizes to exact target limits like 50kb or 100kb for platforms like Naukri, LinkedIn, and Aadhaar cards using local WebAssembly execution.',
+              },
+              {
+                '@type': 'WebSite',
+                '@id': 'https://compress4.com/#website',
+                url: 'https://compress4.com/',
+                name: 'Compress4',
+                potentialAction: {
+                  '@type': 'SearchAction',
+                  target: {
+                    '@type': 'EntryPoint',
+                    urlTemplate: 'https://compress4.com/?s={search_term_string}',
+                  },
+                  'query-input': 'required name=search_term_string',
+                },
+              },
+              {
+                '@type': 'FAQPage',
+                '@id': 'https://compress4.com/compress-image/#faq',
+                mainEntity: faqs.map((f) => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              },
+            ],
           }),
         }}
       />

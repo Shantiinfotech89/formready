@@ -47,9 +47,9 @@ const useCases: UseCase[] = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Compress PDF without uploading it',
+  title: 'Compress PDF Online Free - Reduce PDF File Size | Compress4',
   description:
-    'Compress any PDF to the exact KB size your form needs — Aadhaar scans, signed contracts, property deeds. All compression runs in your browser. No upload, ever.',
+    'Reduce PDF size without losing quality. Easily compress PDF online to 100kb or any exact target size. Safe, free, and completely processed in your browser.',
   alternates: { canonical: '/compress-pdf' },
 }
 
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     q: 'Is this safer than iLovePDF for sensitive documents?',
-    a: 'Yes — fundamentally. iLovePDF and similar tools upload your PDF to their server, compress it there, and send the result back. Their privacy policy controls what happens with your file in transit and on disk. With FormReady, the file never leaves your browser. There is no privacy policy you have to trust about what happens to your file because nothing happens to your file outside your device.',
+    a: 'Yes — fundamentally. iLovePDF and similar tools upload your PDF to their server, compress it there, and send the result back. Their privacy policy controls what happens with your file in transit and on disk. With Compress4, the file never leaves your browser. There is no privacy policy you have to trust about what happens to your file because nothing happens to your file outside your device.',
   },
   {
     q: 'How does the "exact KB" target work?',
@@ -126,8 +126,8 @@ export default function CompressPdfPage() {
             <MiniTrustComparison
               themLabel="iLovePDF, SmallPDF, Adobe Acrobat Online uploaded your PDF"
               themDescription="Their server received your file, compressed it there, and held it temporarily. You had to trust their privacy policy and security on every step."
-              usLabel="FormReady processed your PDF locally"
-              usDescription="The compression engine ran in your browser via WebAssembly. Your PDF never touched any FormReady server — and you can verify this in your own DevTools Network tab."
+              usLabel="Compress4 processed your PDF locally"
+              usDescription="The compression engine ran in your browser via WebAssembly. Your PDF never touched any Compress4 server — and you can verify this in your own DevTools Network tab."
             />
           </RevealOnScroll>
         </section>
@@ -187,12 +187,42 @@ export default function CompressPdfPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
+            '@graph': [
+              {
+                '@type': 'SoftwareApplication',
+                '@id': 'https://compress4.com/compress-pdf/#software',
+                name: 'Compress4 PDF Compressor',
+                url: 'https://compress4.com/compress-pdf',
+                applicationCategory: 'UtilitiesApplication',
+                operatingSystem: 'All',
+                offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+                description:
+                  'An browser-based PDF compression tool that reduces PDF file sizes to exact target limits like 100kb using local WebAssembly execution.',
+              },
+              {
+                '@type': 'WebSite',
+                '@id': 'https://compress4.com/#website',
+                url: 'https://compress4.com/',
+                name: 'Compress4',
+                potentialAction: {
+                  '@type': 'SearchAction',
+                  target: {
+                    '@type': 'EntryPoint',
+                    urlTemplate: 'https://compress4.com/?s={search_term_string}',
+                  },
+                  'query-input': 'required name=search_term_string',
+                },
+              },
+              {
+                '@type': 'FAQPage',
+                '@id': 'https://compress4.com/compress-pdf/#faq',
+                mainEntity: faqs.map((f) => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              },
+            ],
           }),
         }}
       />

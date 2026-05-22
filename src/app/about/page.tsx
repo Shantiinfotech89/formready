@@ -8,9 +8,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'About FormReady',
+  title: 'About Compress4',
   description:
-    'Why we built FormReady — a privacy-first compression tool for Indian forms. The story, the principles, and the roadmap.',
+    'Why we built Compress4 — a privacy-first compression tool for Indian forms. The story, the principles, and the roadmap.',
   alternates: { canonical: '/about' },
 }
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 <span className="text-primary">already existed</span>
               </h1>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                Indian government forms demand exact KB sizes for photos and signatures. Existing tools force trial-and-error with sliders, and most upload your sensitive documents to a stranger&apos;s server. FormReady fixes both.
+                Indian government forms demand exact KB sizes for photos and signatures. Existing tools force trial-and-error with sliders, and most upload your sensitive documents to a stranger&apos;s server. Compress4 fixes both.
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
                 What made us keep building was the second realisation: <strong>the existing tools were uploading sensitive documents — Aadhaar, PAN, signed contracts, visa photos — to cloud servers run by foreign companies</strong>. Convenient, sure. But every upload is a leak risk, and the privacy-cost was being borne by users who didn&apos;t know they were paying it.
               </p>
               <p>
-                FormReady is what we wanted to give him. Free single-file compression, exact KB targeting, zero upload, built for Indian forms. We open-source the compression engine on{' '}
+                Compress4 is what we wanted to give him. Free single-file compression, exact KB targeting, zero upload, built for Indian forms. We open-source the compression engine on{' '}
                 <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>{' '}
                 so anyone can verify the privacy claim.
               </p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-2 text-display-sm font-bold tracking-tight">Where we are</h2>
             <p className="mb-8 text-muted-foreground">
-              FormReady is a small, deliberately-paced project. Here&apos;s the timeline so far and what&apos;s next.
+              Compress4 is a small, deliberately-paced project. Here&apos;s the timeline so far and what&apos;s next.
             </p>
             <ol className="space-y-6 border-l-2 border-border pl-6">
               {milestones.map((m, i) => (

@@ -61,7 +61,7 @@ export function CookieBanner() {
         </div>
         <div className="flex-1 text-sm">
           <p className="font-medium leading-tight">
-            FormReady uses minimal cookies — no behavioural advertising trackers from us.
+            Compress4 uses minimal cookies — no behavioural advertising trackers from us.
           </p>
           <p className="mt-1 leading-snug text-muted-foreground">
             Your file never leaves your device. We use first-party cookies only for language preference and (Pro) authentication.{' '}

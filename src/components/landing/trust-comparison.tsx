@@ -50,7 +50,7 @@ export function TrustComparison({ className }: { className?: string }) {
         <div className="flex items-center gap-2 border-b border-primary/30 bg-primary/[0.07] px-5 py-3">
           <Check className="h-4 w-4 text-primary-press" strokeWidth={2.5} />
           <span className="text-sm font-semibold text-primary-press">
-            FormReady
+            Compress4
           </span>
         </div>
         <ul className="divide-y divide-primary/10">

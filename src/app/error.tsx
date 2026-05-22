@@ -23,7 +23,7 @@ export default function RouteError({ error, reset }: ErrorProps) {
   React.useEffect(() => {
     // In production we forward to Sentry / our error sink here.
     // eslint-disable-next-line no-console
-    console.error('FormReady route error:', error)
+    console.error('Compress4 route error:', error)
   }, [error])
 
   return (

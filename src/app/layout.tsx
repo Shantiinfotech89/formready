@@ -37,7 +37,8 @@ export const metadata: Metadata = {
     template: "%s · FormReady",
   },
   description:
-    "Privacy-first PDF and image compression to exact KB. All compression happens in your browser — your file never leaves your device.",
+    // "Privacy-first PDF and image compression to exact KB. All compression happens in your browser — your file never leaves your device.",
+    "Compress PDF and images online for free without losing quality. Easily reduce PDF size to 100kb and compress JPEG/PNG images with the best compressor.",
   metadataBase: new URL("https://formready.in"),
   applicationName: "FormReady",
   authors: [{ name: "FormReady" }],
@@ -117,6 +118,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 `}
         </script>
         {/* <!-- End Google Tag Manager --> */}
+        
+        {/* <!-- Schema --> */}
+        <script type="application/ld+json">
+{`{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Website",
+      "@id": "https://compress4.com/#website",
+      "url": "https://compress4.com/",
+      "name": "Compress4",
+      "description": "Free online tool to compress PDF, reduce image size, and compress JPEG files without losing quality.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://compress4.com/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://compress4.com/#organization",
+      "name": "Compress4",
+      "url": "https://compress4.com/",
+      "logo": "https://compress4.com/logo.png", 
+      "sameAs": []
+    }
+  ]
+}`}
+</script>
       </head>
       <body
         className={cn(

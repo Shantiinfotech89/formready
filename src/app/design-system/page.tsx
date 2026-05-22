@@ -20,7 +20,7 @@ import { PresetChips } from '@/components/tools/preset-chips'
 
 export const metadata: Metadata = {
   title: 'Design System',
-  description: 'Internal reference for FormReady tokens, components, and patterns.',
+  description: 'Internal reference for Compress4 tokens, components, and patterns.',
   robots: { index: false, follow: false },
 }
 
@@ -47,11 +47,11 @@ const neutralTokens = [
 const typeScale = [
   { name: 'display-xl', cls: 'text-display-xl', meta: '60 / 64 / -0.03em / 700', sample: 'Get your documents form-ready.' },
   { name: 'display-lg', cls: 'text-display-lg', meta: '48 / 52 / -0.02em / 700', sample: 'Compress PDF under 100KB' },
-  { name: 'display-md', cls: 'text-display-md', meta: '36 / 40 / -0.02em / 700', sample: 'Why FormReady is different' },
+  { name: 'display-md', cls: 'text-display-md', meta: '36 / 40 / -0.02em / 700', sample: 'Why Compress4 is different' },
   { name: '2xl', cls: 'text-2xl font-semibold', meta: '24 / 32 / 600', sample: 'SSC CGL Photo Specifications' },
   { name: 'xl', cls: 'text-xl font-semibold', meta: '20 / 28 / 600', sample: 'Drop your PDF or click to choose' },
   { name: 'lg lede', cls: 'text-lg font-medium', meta: '18 / 28 / 500', sample: 'Type the exact KB. We hit it. Your file never leaves your device.' },
-  { name: 'base body', cls: 'text-base', meta: '16 / 24 / 400', sample: 'FormReady accepts an exact target size in KB as the primary input.' },
+  { name: 'base body', cls: 'text-base', meta: '16 / 24 / 400', sample: 'Compress4 accepts an exact target size in KB as the primary input.' },
   { name: 'sm helper', cls: 'text-sm text-muted-foreground', meta: '14 / 20 / 400', sample: 'Specs from ssc.nic.in (verified Mar 2026)' },
 ]
 
@@ -145,7 +145,7 @@ export default function DesignSystemPage() {
             <Badge variant="info" className="mb-4">
               <Sparkles className="h-3 w-3" /> Internal · noindex
             </Badge>
-            <h1 className="text-display-lg font-bold tracking-tight">FormReady Design System</h1>
+            <h1 className="text-display-lg font-bold tracking-tight">Compress4 Design System</h1>
             <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
               Living reference for tokens, components, and patterns. Every component on this page maps 1:1 to a rule in <code className="rounded bg-muted px-1.5 py-0.5 text-sm">BRAND_GUIDELINES.md</code>.
             </p>

@@ -5,7 +5,7 @@ import { LegalPageShell } from '@/components/legal/legal-page-shell'
 export const metadata: Metadata = {
   title: 'Cookie Policy',
   description:
-    'Which cookies FormReady uses, why, and how to control them. We use very few — and none for behavioural advertising on our own site.',
+    'Which cookies Compress4 uses, why, and how to control them. We use very few — and none for behavioural advertising on our own site.',
   alternates: { canonical: '/cookies' },
 }
 
@@ -14,7 +14,7 @@ export default function CookiesPage() {
     <LegalPageShell
       title="Cookie Policy"
       lastUpdated="2026-04-01"
-      lede="A short, complete inventory of every cookie FormReady sets, why it's set, and how to disable it."
+      lede="A short, complete inventory of every cookie Compress4 sets, why it's set, and how to disable it."
     >
       <p className="text-sm italic text-muted-foreground">
         ⚠ This is a v0 draft. Final version pending review before public launch.
@@ -25,7 +25,7 @@ export default function CookiesPage() {
         A cookie is a small text file that a website stores in your browser to remember information between visits. Cookies can be &quot;first-party&quot; (set by the site you&apos;re visiting) or &quot;third-party&quot; (set by external services embedded in the page). They can be &quot;session&quot; (deleted when you close the browser) or &quot;persistent&quot; (kept for a set time).
       </p>
 
-      <h2>2. The complete list of cookies FormReady sets</h2>
+      <h2>2. The complete list of cookies Compress4 sets</h2>
       <p>We use as few cookies as possible. Here is the entire inventory:</p>
 
       <div className="not-prose overflow-x-auto rounded-lg border border-border bg-card">
@@ -71,7 +71,7 @@ export default function CookiesPage() {
       <p>The following cookies are set by third-party services, and only when their respective features are active:</p>
       <ul>
         <li><strong>Google AdSense</strong> — sets cookies on tool and content pages where ads are shown. AdSense uses cookies for fraud prevention, frequency capping, and (with consent) personalised advertising. Manage your AdSense settings at <a href="https://adssettings.google.com" target="_blank" rel="noreferrer">adssettings.google.com</a>.</li>
-        <li><strong>Razorpay</strong> — sets cookies during the checkout flow for fraud prevention and to remember saved payment methods. These cookies are scoped to the Razorpay checkout iframe and never available to FormReady scripts.</li>
+        <li><strong>Razorpay</strong> — sets cookies during the checkout flow for fraud prevention and to remember saved payment methods. These cookies are scoped to the Razorpay checkout iframe and never available to Compress4 scripts.</li>
         <li><strong>Cloudflare Turnstile</strong> — invisible captcha; <em>does not</em> set cookies under default configuration. Uses ephemeral browser-fingerprinting signals only.</li>
       </ul>
 
