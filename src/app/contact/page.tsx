@@ -20,7 +20,7 @@ import { Card, CardContent } from '@/components/ui/card'
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Reach the right inbox at FormReady — support, security, press, partnerships, billing, legal, or just to say hi.',
+    'Reach the right inbox at Compress4 — support, security, press, partnerships, billing, legal, or just to say hi.',
   alternates: { canonical: '/contact' },
 }
 

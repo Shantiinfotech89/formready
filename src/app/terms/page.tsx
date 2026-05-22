@@ -5,7 +5,7 @@ import { LegalPageShell } from '@/components/legal/legal-page-shell'
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description:
-    'The terms governing your use of FormReady — free tools, Pro subscriptions, and the API.',
+    'The terms governing your use of Compress4 — free tools, Pro subscriptions, and the API.',
   alternates: { canonical: '/terms' },
 }
 
@@ -14,7 +14,7 @@ export default function TermsPage() {
     <LegalPageShell
       title="Terms of Service"
       lastUpdated="2026-04-01"
-      lede="The plain-English contract for using FormReady. Read it once; we'll let you know if it changes."
+      lede="The plain-English contract for using Compress4. Read it once; we'll let you know if it changes."
     >
       <p className="text-sm italic text-muted-foreground">
         ⚠ This is a v0 draft. Final version pending Indian commercial-law review before public launch.
@@ -22,17 +22,17 @@ export default function TermsPage() {
 
       <h2>1. Acceptance of these terms</h2>
       <p>
-        By using <code>formready.in</code> (the &quot;Service&quot;), you agree to these Terms of Service. If you don&apos;t agree, please don&apos;t use the Service. By using the Service on behalf of an organisation, you represent that you have authority to bind that organisation.
+        By using <code>compress4.com</code> (the &quot;Service&quot;), you agree to these Terms of Service. If you don&apos;t agree, please don&apos;t use the Service. By using the Service on behalf of an organisation, you represent that you have authority to bind that organisation.
       </p>
 
       <h2>2. Who we are</h2>
       <p>
-        The Service is provided by [LEGAL ENTITY NAME — e.g., FormReady Technologies Pvt Ltd], a company registered in India ([CIN]) with its principal office at [REGISTERED ADDRESS]. Our domain is <code>formready.in</code>.
+        The Service is provided by [LEGAL ENTITY NAME — e.g., Compress4 Technologies Pvt Ltd], a company registered in India ([CIN]) with its principal office at [REGISTERED ADDRESS]. Our domain is <code>compress4.com</code>.
       </p>
 
       <h2>3. The service</h2>
       <p>
-        FormReady provides browser-based file compression and resizing tools (PDF, image, photo, signature), and related programmatic landing pages, blog content, and FAQ resources. The Service is offered in two tiers:
+        Compress4 provides browser-based file compression and resizing tools (PDF, image, photo, signature), and related programmatic landing pages, blog content, and FAQ resources. The Service is offered in two tiers:
       </p>
       <ul>
         <li><strong>Free tier</strong> — single-file compression, supported by ads, with a rate limit of 30 operations per hour per IP address.</li>
@@ -82,7 +82,7 @@ export default function TermsPage() {
 
       <h2>8. Intellectual property</h2>
       <p>
-        The Service, including all software, design, branding, and written content, is owned by FormReady and protected by Indian and international copyright, trademark, and other laws. We grant you a limited, revocable, non-exclusive, non-transferable licence to use the Service in accordance with these Terms.
+        The Service, including all software, design, branding, and written content, is owned by Compress4 and protected by Indian and international copyright, trademark, and other laws. We grant you a limited, revocable, non-exclusive, non-transferable licence to use the Service in accordance with these Terms.
       </p>
       <p>
         Files you upload remain entirely yours. We claim no ownership and no licence over your files. Because we don&apos;t see your files in the first place (they never reach our servers), this is structurally guaranteed.
@@ -101,7 +101,7 @@ export default function TermsPage() {
 
       <h2>10. Limitation of liability</h2>
       <p>
-        To the maximum extent permitted by law, FormReady, its officers, directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of the Service. Our total aggregate liability for any claim related to the Service shall not exceed the greater of (a) ₹1,000 or (b) the amount you have paid us in the 12 months preceding the claim.
+        To the maximum extent permitted by law, Compress4, its officers, directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of the Service. Our total aggregate liability for any claim related to the Service shall not exceed the greater of (a) ₹1,000 or (b) the amount you have paid us in the 12 months preceding the claim.
       </p>
       <p>
         Some jurisdictions do not allow exclusion of certain warranties or limitation of liability; in such jurisdictions, our liability is limited to the maximum extent permitted by law.
@@ -109,7 +109,7 @@ export default function TermsPage() {
 
       <h2>11. Indemnification</h2>
       <p>
-        You agree to indemnify and hold FormReady and its affiliates harmless from any claim arising out of your violation of these Terms, your use of the Service in violation of any law, or your infringement of any third party&apos;s rights.
+        You agree to indemnify and hold Compress4 and its affiliates harmless from any claim arising out of your violation of these Terms, your use of the Service in violation of any law, or your infringement of any third party&apos;s rights.
       </p>
 
       <h2>12. Termination</h2>

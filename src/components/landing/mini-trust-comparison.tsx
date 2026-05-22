@@ -72,7 +72,7 @@ export function MiniTrustComparison({
         <div className="overflow-hidden rounded-2xl border-2 border-primary bg-primary/[0.04] shadow-md">
           <div className="flex items-center gap-2 border-b border-primary/30 bg-primary/[0.07] px-5 py-3">
             <ShieldCheck className="h-4 w-4 text-primary-press" strokeWidth={2.5} />
-            <span className="text-sm font-semibold text-primary-press">FormReady</span>
+            <span className="text-sm font-semibold text-primary-press">Compress4</span>
           </div>
           <div className="space-y-3 px-5 py-4">
             <p className="flex items-start gap-2 text-sm leading-snug">

@@ -16,7 +16,7 @@ export function FTile({ size = 'md', className, ...props }: FTileProps) {
   return (
     <div
       role="img"
-      aria-label="FormReady icon"
+      aria-label="Compress4 icon"
       className={cn(
         'relative flex items-center justify-center font-sans font-bold leading-none text-white shadow-lg',
         'bg-[linear-gradient(135deg,_#3D5AFE_0%,_#0EA5E9_100%)]',

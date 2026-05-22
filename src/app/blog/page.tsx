@@ -40,7 +40,7 @@ export default async function BlogIndexPage() {
                 <BookOpen className="h-3 w-3" /> Blog
               </Badge>
               <h1 className="text-display-md sm:text-display-lg font-bold tracking-tight">
-                The FormReady{' '}
+                The Compress4{' '}
                 <span className="text-primary">field guide</span>
               </h1>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">

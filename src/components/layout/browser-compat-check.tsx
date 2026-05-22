@@ -55,7 +55,7 @@ export function BrowserCompatCheck() {
         <AlertTriangle className="h-5 w-5 shrink-0 text-amber-700" strokeWidth={2.25} />
         <div className="flex-1 text-sm">
           <p className="font-semibold text-amber-900">
-            Your browser may not run FormReady correctly
+            Your browser may not run Compress4 correctly
           </p>
           <p className="mt-1 leading-snug text-amber-900/80">
             Compression depends on{' '}

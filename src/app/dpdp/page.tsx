@@ -5,7 +5,7 @@ import { LegalPageShell } from '@/components/legal/legal-page-shell'
 export const metadata: Metadata = {
   title: 'DPDP Compliance — Digital Personal Data Protection Act, 2023',
   description:
-    'How FormReady complies with the Digital Personal Data Protection Act, 2023, the Indian privacy law that governs personal data of Indian residents.',
+    'How Compress4 complies with the Digital Personal Data Protection Act, 2023, the Indian privacy law that governs personal data of Indian residents.',
   alternates: { canonical: '/dpdp' },
 }
 
@@ -15,7 +15,7 @@ export default function DpdpPage() {
       title="DPDP Compliance"
       eyebrow="DPDP Act 2023"
       lastUpdated="2026-04-01"
-      lede="A focused note on how the Digital Personal Data Protection Act, 2023 applies to FormReady — and how our architecture lets us comply by collecting almost nothing in the first place."
+      lede="A focused note on how the Digital Personal Data Protection Act, 2023 applies to Compress4 — and how our architecture lets us comply by collecting almost nothing in the first place."
     >
       <p className="text-sm italic text-muted-foreground">
         ⚠ This is a v0 draft. Final version pending review by Indian privacy counsel before public launch.
@@ -23,12 +23,12 @@ export default function DpdpPage() {
 
       <h2>1. About this notice</h2>
       <p>
-        India&apos;s <strong>Digital Personal Data Protection Act, 2023</strong> (&quot;DPDP Act&quot;) regulates the processing of digital personal data of residents of India. This notice describes how FormReady complies with the DPDP Act. It is supplemental to our broader <Link href="/privacy">Privacy Policy</Link>; where there is any conflict between the two on DPDP-specific matters, this notice prevails for Indian residents.
+        India&apos;s <strong>Digital Personal Data Protection Act, 2023</strong> (&quot;DPDP Act&quot;) regulates the processing of digital personal data of residents of India. This notice describes how Compress4 complies with the DPDP Act. It is supplemental to our broader <Link href="/privacy">Privacy Policy</Link>; where there is any conflict between the two on DPDP-specific matters, this notice prevails for Indian residents.
       </p>
 
       <h2>2. The architecture-first approach</h2>
       <p>
-        The cleanest way to comply with a data protection law is to never collect personal data in the first place. FormReady is built around that principle. Single-file compression (PDF, image, photo, signature) runs entirely in your browser via WebAssembly. <strong>The file content never reaches FormReady servers</strong>, which means no personal data within those files ever becomes our responsibility under the DPDP Act.
+        The cleanest way to comply with a data protection law is to never collect personal data in the first place. Compress4 is built around that principle. Single-file compression (PDF, image, photo, signature) runs entirely in your browser via WebAssembly. <strong>The file content never reaches Compress4 servers</strong>, which means no personal data within those files ever becomes our responsibility under the DPDP Act.
       </p>
       <p>
         You can verify this yourself at <Link href="/privacy/verify">/privacy/verify</Link>: open DevTools, run a sample compression, watch the Network tab show zero outbound file requests.
@@ -109,7 +109,7 @@ export default function DpdpPage() {
 
       <h2>11. Significant Data Fiduciary status</h2>
       <p>
-        Based on our current scale of operations, FormReady is not classified as a Significant Data Fiduciary under §10 of the DPDP Act. If our processing volumes change such that this classification applies, we will appoint a Data Protection Officer, conduct annual data audits, and update this notice accordingly.
+        Based on our current scale of operations, Compress4 is not classified as a Significant Data Fiduciary under §10 of the DPDP Act. If our processing volumes change such that this classification applies, we will appoint a Data Protection Officer, conduct annual data audits, and update this notice accordingly.
       </p>
 
       <h2>12. Updates to this notice</h2>

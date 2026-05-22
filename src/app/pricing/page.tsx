@@ -26,7 +26,7 @@ import { FaqSection } from '@/components/landing/faq-section'
 export const metadata: Metadata = {
   title: 'Pricing — coming later',
   description:
-    'FormReady is free for everyone right now. Paid tiers will come later, after we know what users actually need.',
+    'Compress4 is free for everyone right now. Paid tiers will come later, after we know what users actually need.',
   alternates: { canonical: '/pricing' },
   // Hidden from nav + sitemap + search engines until we re-enable Pro tier.
   robots: { index: false, follow: false },

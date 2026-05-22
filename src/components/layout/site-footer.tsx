@@ -81,7 +81,7 @@ export function SiteFooter() {
         <div className="container-wide flex flex-col items-center justify-between gap-4 py-6 text-sm sm:flex-row">
           <PrivacyLockup variant="footer" className="text-background/70" />
           <p className="text-xs text-background/50">
-            © {new Date().getFullYear()} FormReady · Made in India 🇮🇳
+            © {new Date().getFullYear()} Compress4 · Made in India 🇮🇳
           </p>
         </div>
       </div>

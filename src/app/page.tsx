@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   ArrowRight,
@@ -106,6 +107,12 @@ const homepageFaqs = [
     a: 'The global tools were not built for SSC photo specs, IBPS signature limits, or visa applicants under deadline pressure. We were. Every preset, every error message, every Hindi translation is written for someone applying to an Indian government form at 2am the night before the deadline.',
   },
 ]
+
+export const metadata: Metadata = {
+  title: 'Compress PDF Online Free - Reduce PDF & Image Size | Compress4',
+  description:
+    'Compress PDF and images online for free without losing quality. Easily reduce PDF size to 100kb and compress JPEG/PNG images with the best compressor.',
+}
 
 export default async function HomePage() {
   const latestPosts = (await getAllPosts()).slice(0, 3)
@@ -513,25 +520,63 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            name: 'FormReady',
-            url: 'https://formready.in',
-            description:
-              'Privacy-first PDF and image compression to exact KB. Files never leave your device.',
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: homepageFaqs.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: "You really can't see my file?",
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text:
+                    'Correct — by architecture, not by promise. Compression runs entirely in your browser via WebAssembly. There is no server endpoint in our codebase that receives file content. You can verify this in 30 seconds: open DevTools → Network tab and watch a compression run. Zero new requests appear.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Is it really free?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text:
+                    'Yes — every tool on the site is free to use, no signup required. We may add paid features later for power users who need batch processing or an API, but the core compressors stay free for everyone.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What about old browsers?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text:
+                    'WebAssembly works in every browser released since 2017. For HEIC photos on older Brave/Firefox/Chrome on Android, we lazy-load a JavaScript fallback decoder. If your browser is genuinely too old, we show a banner letting you know — better to upgrade than try.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'How is this different from iLovePDF or SmallPDF?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text:
+                    "Three things. (1) Privacy — they upload your file to their servers; we never receive it. (2) Exact KB targets — they give you 'low / medium / high' sliders; we hit the number you type. (3) Indian-form-aware — we have presets for SSC/UPSC/NEET/IBPS/visa with the exact pixel + KB specs from official notifications.",
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Will my form portal accept the output?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text:
+                    "For exam/visa-specific tools, our presets come from the official notification PDFs and we re-verify quarterly. We hit the technical spec (pixels + KB + format). Final acceptance also depends on photo quality (lighting, expression, plain background) — that's on the photographer, not the compressor.",
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Why an Indian-made tool when global ones exist?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text:
+                    "The global tools were not built for SSC photo specs, IBPS signature limits, or visa applicants under deadline pressure. We were. Every preset, every error message, every Hindi translation is written for someone applying to an Indian government form at 2am the night before the deadline.",
+                },
+              },
+            ],
           }),
         }}
       />
