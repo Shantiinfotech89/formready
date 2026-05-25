@@ -511,9 +511,6 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
-          <span className="text-sm text-muted-foreground">
-            V1.1.4
-          </span>
         </section>
       </main>
       <SiteFooter />
