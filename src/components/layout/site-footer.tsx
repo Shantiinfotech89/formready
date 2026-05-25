@@ -82,6 +82,7 @@ export function SiteFooter() {
           <PrivacyLockup variant="footer" className="text-background/70" />
           <p className="text-xs text-background/50">
             © {new Date().getFullYear()} Compress4 · Made in India 🇮🇳
+            <span> V1.1.4</span>
           </p>
         </div>
       </div>
