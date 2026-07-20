@@ -3,7 +3,7 @@
  *
  * Gated behind `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`: when the env var is unset
  * (e.g. local dev, preview branches without analytics), this component
- * renders nothing and no script is loaded. Set it to `formready.in` (or
+ * renders nothing and no script is loaded. Set it to `compress4.com` (or
  * whatever the production domain is) on Vercel to enable.
  *
  * No cookies, no personal data — see `/privacy` and the cookie banner for

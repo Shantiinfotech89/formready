@@ -20,11 +20,11 @@ export function OpenSourceCard() {
             We open-source the compression engine on GitHub under{' '}
             <span className="num font-medium text-foreground">MIT</span>. Every claim about how compression works can be verified by reading the source. Found a vulnerability? Please report privately to{' '}
             <a
-              href="mailto:security@formready.in"
+              href="mailto:security@compress4.com"
               className="inline-flex items-center gap-1 font-medium text-primary-press underline-offset-4 hover:underline"
             >
               <ShieldAlert className="h-3 w-3" />
-              security@formready.in
+              security@compress4.com
             </a>{' '}
             before public disclosure.
           </p>
@@ -39,7 +39,7 @@ export function OpenSourceCard() {
             </a>
           </Button>
           <Button asChild variant="ghost" size="sm">
-            <a href="mailto:security@formready.in">
+            <a href="mailto:security@compress4.com">
               Security disclosure
             </a>
           </Button>

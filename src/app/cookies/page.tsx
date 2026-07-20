@@ -110,7 +110,7 @@ export default function CookiesPage() {
 
       <h2>8. Questions</h2>
       <p>
-        For questions about cookies, email <a href="mailto:privacy@formready.in">privacy@formready.in</a>. See also our broader <Link href="/privacy">Privacy Policy</Link>.
+        For questions about cookies, email <a href="mailto:privacy@compress4.com">privacy@compress4.com</a>. See also our broader <Link href="/privacy">Privacy Policy</Link>.
       </p>
     </LegalPageShell>
   )

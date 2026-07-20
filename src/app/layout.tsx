@@ -34,13 +34,13 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: {
     default: "Compress4",
-    template: "%s · FormReady",
+    template: "%s · Compress4",
   },
   description:
     "Privacy-first PDF and image compression to exact KB. All compression happens in your browser — your file never leaves your device.",
-  metadataBase: new URL("https://formready.in"),
-  applicationName: "FormReady",
-  authors: [{ name: "FormReady" }],
+  metadataBase: new URL("https://compress4.com"),
+  applicationName: "Compress4",
+  authors: [{ name: "Compress4" }],
   keywords: [
     "PDF compression",
     "image compression",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    siteName: "FormReady",
-    title: "FormReady — Get your documents form-ready",
+    siteName: "Compress4",
+    title: "Compress4 — Get your documents compress4",
     description:
       "Type the exact KB. We hit it. Your file never leaves your device.",
     url: "/",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FormReady — Get your documents form-ready",
+    title: "Compress4 — Get your documents compress4",
   },
   robots: {
     index: true,
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "FormReady",
+    title: "Compress4",
   },
 };
 

@@ -45,7 +45,7 @@ const neutralTokens = [
 ]
 
 const typeScale = [
-  { name: 'display-xl', cls: 'text-display-xl', meta: '60 / 64 / -0.03em / 700', sample: 'Get your documents form-ready.' },
+  { name: 'display-xl', cls: 'text-display-xl', meta: '60 / 64 / -0.03em / 700', sample: 'Get your documents compress4.' },
   { name: 'display-lg', cls: 'text-display-lg', meta: '48 / 52 / -0.02em / 700', sample: 'Compress PDF under 100KB' },
   { name: 'display-md', cls: 'text-display-md', meta: '36 / 40 / -0.02em / 700', sample: 'Why Compress4 is different' },
   { name: '2xl', cls: 'text-2xl font-semibold', meta: '24 / 32 / 600', sample: 'SSC CGL Photo Specifications' },
@@ -168,7 +168,7 @@ export default function DesignSystemPage() {
         >
           <div className="rounded-2xl border bg-gradient-to-br from-card to-primary/[0.04] p-12 text-center">
             <Wordmark size="xl" />
-            <p className="mt-6 text-xl text-muted-foreground">Get your documents form-ready.</p>
+            <p className="mt-6 text-xl text-muted-foreground">Get your documents compress4.</p>
             <p className="mt-2 font-devanagari text-lg text-muted-foreground/80">आपके फॉर्म के लिए तैयार.</p>
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
               <FTile size="lg" />

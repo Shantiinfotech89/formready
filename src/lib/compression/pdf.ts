@@ -131,8 +131,8 @@ async function tryStructural(buffer: ArrayBuffer, targetBytes: number): Promise<
   doc.setAuthor('')
   doc.setSubject('')
   doc.setKeywords([])
-  doc.setProducer('FormReady')
-  doc.setCreator('FormReady')
+  doc.setProducer('Compress4')
+  doc.setCreator('Compress4')
 
   const bytes = await doc.save({
     useObjectStreams: true,

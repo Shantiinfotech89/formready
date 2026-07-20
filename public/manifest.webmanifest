@@ -1,6 +1,6 @@
 {
-  "name": "FormReady",
-  "short_name": "FormReady",
+  "name": "Compress4",
+  "short_name": "Compress4",
   "description": "Privacy-first PDF and image compression to exact KB. Works offline.",
   "start_url": "/",
   "display": "standalone",

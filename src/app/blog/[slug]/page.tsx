@@ -142,12 +142,12 @@ export default async function BlogPostPage({ params }: PageProps) {
             author: { '@type': 'Organization', name: post.author },
             publisher: {
               '@type': 'Organization',
-              name: 'FormReady',
-              url: 'https://formready.in',
+              name: 'Compress4',
+              url: 'https://compress4.com',
             },
             mainEntityOfPage: {
               '@type': 'WebPage',
-              '@id': `https://formready.in/blog/${post.slug}`,
+              '@id': `https://compress4.com/blog/${post.slug}`,
             },
             inLanguage: 'en-IN',
             wordCount: post.wordCount,

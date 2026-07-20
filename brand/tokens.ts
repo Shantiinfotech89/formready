@@ -1,5 +1,5 @@
 /**
- * FormReady — Design Tokens
+ * Compress4 — Design Tokens
  * Direction: Razorpay-grade Indian Fintech-Modern (Option 6 + selective borrowings)
  *
  * Single source of truth for colours, typography, spacing, radius, shadow, motion.

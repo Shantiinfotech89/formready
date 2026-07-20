@@ -34,49 +34,49 @@ interface ContactRoute {
 
 const routes: ContactRoute[] = [
   {
-    email: 'hello@formready.in',
+    email: 'hello@compress4.com',
     label: 'General',
     description: 'Anything that doesn\'t fit elsewhere — saying hi, suggestions, partnerships.',
     Icon: Mail,
     responseTime: '2 business days',
   },
   {
-    email: 'support@formready.in',
+    email: 'support@compress4.com',
     label: 'Support',
     description: 'A tool isn\'t working, you\'re stuck, or your form rejected something we said would work.',
     Icon: HelpCircle,
     responseTime: '1 business day for Pro · 3 days for free',
   },
   {
-    email: 'security@formready.in',
+    email: 'security@compress4.com',
     label: 'Security',
     description: 'Vulnerabilities, suspected breaches, responsible-disclosure reports. Please disclose privately first.',
     Icon: ShieldAlert,
     responseTime: 'Same day for confirmed vulnerabilities',
   },
   {
-    email: 'bugs@formready.in',
+    email: 'bugs@compress4.com',
     label: 'Bugs',
     description: 'Something\'s broken on our side. Include the page, the steps, the browser, and a screenshot if possible.',
     Icon: Bug,
     responseTime: '2 business days',
   },
   {
-    email: 'billing@formready.in',
+    email: 'billing@compress4.com',
     label: 'Billing',
     description: 'Pro subscription questions, refunds, GST invoices, payment failures.',
     Icon: ScrollText,
     responseTime: '1 business day',
   },
   {
-    email: 'press@formready.in',
+    email: 'press@compress4.com',
     label: 'Press',
     description: 'Interview requests, quotes, embargoed press kit. We\'ll respond with available materials.',
     Icon: Newspaper,
     responseTime: '3 business days',
   },
   {
-    email: 'grievance@formready.in',
+    email: 'grievance@compress4.com',
     label: 'Privacy grievance',
     description: 'Formal grievance under the DPDP Act 2023. Goes to our designated Grievance Officer.',
     Icon: MessageSquare,
@@ -162,7 +162,7 @@ export default function ContactPage() {
                   <CardContent className="p-6">
                     <h3 className="text-base font-semibold">Mailing address</h3>
                     <p className="mt-2 text-sm text-muted-foreground">
-                      [LEGAL ENTITY NAME — e.g., FormReady Technologies Pvt Ltd]<br />
+                      [LEGAL ENTITY NAME — e.g., Compress4 Technologies Pvt Ltd]<br />
                       [REGISTERED ADDRESS, INDIA]<br />
                       <span className="num">CIN: [CORPORATE IDENTIFICATION NUMBER]</span>
                     </p>
@@ -184,12 +184,12 @@ export default function ContactPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'ContactPage',
-            url: 'https://formready.in/contact',
+            url: 'https://compress4.com/contact',
             mainEntity: {
               '@type': 'Organization',
-              name: 'FormReady',
-              email: 'hello@formready.in',
-              url: 'https://formready.in',
+              name: 'Compress4',
+              email: 'hello@compress4.com',
+              url: 'https://compress4.com',
             },
           }),
         }}

@@ -1,9 +1,9 @@
-# FormReady — Legal Review Brief
+# Compress4 — Legal Review Brief
 
 **Prepared for:** [Lawyer / Firm Name]
 **Sent by:** [Founder Name]
 **Date:** [Send Date]
-**Project:** FormReady.in — privacy-first PDF and image compression web platform
+**Project:** compress4.com — privacy-first PDF and image compression web platform
 **Engagement:** First-pass review of v0 legal drafts (Privacy Policy · Terms of Service · DPDP Compliance · Cookie Policy)
 
 ---
@@ -12,7 +12,7 @@
 
 This brief is **self-contained** — you don't need access to the codebase or any other file to review.
 
-- Section 1 explains what FormReady actually does and what data flows where (the foundation for every compliance question).
+- Section 1 explains what Compress4 actually does and what data flows where (the foundation for every compliance question).
 - Section 2 lists the open questions per document — what we'd specifically like your opinion on.
 - Section 3 is the placeholder inventory — every `[BRACKETED]` field in the drafts that needs founder data + your sign-off.
 - Section 4 is engagement scope, deliverables, timeline.
@@ -24,9 +24,9 @@ We expect you'll have follow-up factual questions — please send them as a sing
 
 ## 1. The product (factual basis for every question)
 
-### 1.1 What FormReady is
+### 1.1 What Compress4 is
 
-FormReady is a web platform at **formready.in** that helps users compress PDFs, images, photos, and signatures to **exact KB sizes** required by Indian government forms (SSC, UPSC, NEET, IBPS, etc.) and visa applications (US, UK, Schengen, Canada).
+Compress4 is a web platform at **compress4.com** that helps users compress PDFs, images, photos, and signatures to **exact KB sizes** required by Indian government forms (SSC, UPSC, NEET, IBPS, etc.) and visa applications (US, UK, Schengen, Canada).
 
 ### 1.2 What's distinctive — and central to every compliance argument
 
@@ -184,7 +184,7 @@ Every `[BRACKETED]` field across the four documents that needs founder data + la
 
 | Placeholder | Appears in | Suggested value | Founder confirms? |
 |---|---|---|---|
-| `[LEGAL ENTITY NAME]` | Privacy §1 · Terms §2 · DPDP §4 · Contact pages | e.g. "FormReady Technologies Private Limited" | ☐ |
+| `[LEGAL ENTITY NAME]` | Privacy §1 · Terms §2 · DPDP §4 · Contact pages | e.g. "Compress4 Technologies Private Limited" | ☐ |
 | `[CIN]` (Corporate Identification Number) | Terms §2 · DPDP §4 · Contact §Mailing address | India MCA filing number | ☐ |
 | `[REGISTERED ADDRESS]` | Privacy §1 · Terms §2 · DPDP §4 · Contact | Registered office per ROC filing | ☐ |
 | `[GRIEVANCE OFFICER NAME]` | Privacy §1 · Privacy §15 · DPDP §5 | Named individual responsible | ☐ |
@@ -256,17 +256,17 @@ We're targeting public launch about 3 weeks from today. Legal sign-off is the lo
 
 ### Plain-language summary
 
-File compression runs in your browser — your file is never transmitted to FormReady. We collect anonymous usage counters and (for Pro accounts) the minimum needed to bill you. We don't sell data. You can verify the no-upload claim yourself at `/privacy/verify`.
+File compression runs in your browser — your file is never transmitted to Compress4. We collect anonymous usage counters and (for Pro accounts) the minimum needed to bill you. We don't sell data. You can verify the no-upload claim yourself at `/privacy/verify`.
 
 ### 1. Who we are
 
-FormReady is operated by `[LEGAL ENTITY NAME]` (referred to as "FormReady", "we", "us", or "our"), a company registered in India with its principal office at `[REGISTERED ADDRESS]`. Our domain is **formready.in**.
+Compress4 is operated by `[LEGAL ENTITY NAME]` (referred to as "Compress4", "we", "us", or "our"), a company registered in India with its principal office at `[REGISTERED ADDRESS]`. Our domain is **compress4.com**.
 
-For questions about this policy or any privacy matter, contact our Grievance Officer: grievance@formready.in (`[GRIEVANCE OFFICER NAME]`, available Monday–Friday, 10:00–18:00 IST).
+For questions about this policy or any privacy matter, contact our Grievance Officer: grievance@compress4.com (`[GRIEVANCE OFFICER NAME]`, available Monday–Friday, 10:00–18:00 IST).
 
 ### 2. The architecture-first promise
 
-FormReady is designed so that personal data minimisation is structural, not optional. The compression engine runs entirely in your browser via WebAssembly and Canvas APIs. **The file you upload to a tool never leaves your device.** There is no server endpoint that receives file content. You can verify this by opening your browser's DevTools → Network tab while compressing — zero outbound file requests will be visible. We provide a live demonstration at /privacy/verify.
+Compress4 is designed so that personal data minimisation is structural, not optional. The compression engine runs entirely in your browser via WebAssembly and Canvas APIs. **The file you upload to a tool never leaves your device.** There is no server endpoint that receives file content. You can verify this by opening your browser's DevTools → Network tab while compressing — zero outbound file requests will be visible. We provide a live demonstration at /privacy/verify.
 
 ### 3. What we collect — and don't
 
@@ -297,7 +297,7 @@ We use a minimal set of first-party cookies — none for behavioural advertising
 
 ### 5. Third parties we share data with
 
-We only share data with services strictly necessary to operate FormReady. Each is contractually bound to use the data only for the purpose listed:
+We only share data with services strictly necessary to operate Compress4. Each is contractually bound to use the data only for the purpose listed:
 
 - **Google Identity** — to authenticate Pro users via OAuth. Only your email, display name, and profile photo URL are received.
 - **Razorpay** — to process payments. Razorpay receives your billing details directly; we receive only a payment ID.
@@ -339,7 +339,7 @@ If you are a resident of the European Economic Area, the United Kingdom, or Swit
 
 ### 10. Children
 
-Our services are intended for users 13 years of age or older. If you are under the age of majority in your jurisdiction, you may use FormReady only with the consent and supervision of a parent or guardian. We do not knowingly collect personal data from children under 13.
+Our services are intended for users 13 years of age or older. If you are under the age of majority in your jurisdiction, you may use Compress4 only with the consent and supervision of a parent or guardian. We do not knowingly collect personal data from children under 13.
 
 ### 11. International transfers
 
@@ -360,9 +360,9 @@ We may update this policy occasionally to reflect new features, regulatory requi
 ### 15. Contact
 
 For privacy-related queries:
-- privacy@formready.in — general privacy questions
-- grievance@formready.in — formal grievance under the DPDP Act
-- dpo@formready.in — GDPR matters
+- privacy@compress4.com — general privacy questions
+- grievance@compress4.com — formal grievance under the DPDP Act
+- dpo@compress4.com — GDPR matters
 
 If you are not satisfied with our response, you have the right to lodge a complaint with the Data Protection Board of India (dpb.gov.in) or, for EU/UK residents, with your local supervisory authority.
 
@@ -374,15 +374,15 @@ If you are not satisfied with our response, you have the right to lodge a compla
 
 ### 1. Acceptance of these terms
 
-By using formready.in (the "Service"), you agree to these Terms of Service. If you don't agree, please don't use the Service. By using the Service on behalf of an organisation, you represent that you have authority to bind that organisation.
+By using compress4.com (the "Service"), you agree to these Terms of Service. If you don't agree, please don't use the Service. By using the Service on behalf of an organisation, you represent that you have authority to bind that organisation.
 
 ### 2. Who we are
 
-The Service is provided by `[LEGAL ENTITY NAME]`, a company registered in India (`[CIN]`) with its principal office at `[REGISTERED ADDRESS]`. Our domain is formready.in.
+The Service is provided by `[LEGAL ENTITY NAME]`, a company registered in India (`[CIN]`) with its principal office at `[REGISTERED ADDRESS]`. Our domain is compress4.com.
 
 ### 3. The service
 
-FormReady provides browser-based file compression and resizing tools (PDF, image, photo, signature), and related programmatic landing pages, blog content, and FAQ resources. The Service is offered in two tiers:
+Compress4 provides browser-based file compression and resizing tools (PDF, image, photo, signature), and related programmatic landing pages, blog content, and FAQ resources. The Service is offered in two tiers:
 
 - **Free tier** — single-file compression, supported by ads, with a rate limit of 30 operations per hour per IP address.
 - **Pro tier** — a paid subscription unlocking batch processing, API access, ad-free use, and additional features. Pro is not yet available; this section reserves terms that will apply when it launches.
@@ -397,7 +397,7 @@ Pro accounts are created via Google OAuth. You are responsible for maintaining t
 
 You agree to:
 - Provide accurate, current information.
-- Promptly notify us of any unauthorised access via security@formready.in.
+- Promptly notify us of any unauthorised access via security@compress4.com.
 - Not share access credentials or attempt to use the Service from someone else's account.
 
 ### 6. Acceptable use
@@ -422,7 +422,7 @@ We may change Pro pricing for new subscribers at any time. Existing subscribers 
 
 ### 8. Intellectual property
 
-The Service, including all software, design, branding, and written content, is owned by FormReady and protected by Indian and international copyright, trademark, and other laws. We grant you a limited, revocable, non-exclusive, non-transferable licence to use the Service in accordance with these Terms.
+The Service, including all software, design, branding, and written content, is owned by Compress4 and protected by Indian and international copyright, trademark, and other laws. We grant you a limited, revocable, non-exclusive, non-transferable licence to use the Service in accordance with these Terms.
 
 Files you upload remain entirely yours. We claim no ownership and no licence over your files. Because we don't see your files in the first place (they never reach our servers), this is structurally guaranteed.
 
@@ -436,13 +436,13 @@ Form-acceptance disclaimer: while we work to keep exam and visa specifications a
 
 ### 10. Limitation of liability
 
-To the maximum extent permitted by law, FormReady, its officers, directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of the Service. Our total aggregate liability for any claim related to the Service shall not exceed the greater of (a) ₹1,000 or (b) the amount you have paid us in the 12 months preceding the claim.
+To the maximum extent permitted by law, Compress4, its officers, directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of the Service. Our total aggregate liability for any claim related to the Service shall not exceed the greater of (a) ₹1,000 or (b) the amount you have paid us in the 12 months preceding the claim.
 
 Some jurisdictions do not allow exclusion of certain warranties or limitation of liability; in such jurisdictions, our liability is limited to the maximum extent permitted by law.
 
 ### 11. Indemnification
 
-You agree to indemnify and hold FormReady and its affiliates harmless from any claim arising out of your violation of these Terms, your use of the Service in violation of any law, or your infringement of any third party's rights.
+You agree to indemnify and hold Compress4 and its affiliates harmless from any claim arising out of your violation of these Terms, your use of the Service in violation of any law, or your infringement of any third party's rights.
 
 ### 12. Termination
 
@@ -450,7 +450,7 @@ You may stop using the Service or cancel your Pro subscription at any time. We m
 
 ### 13. Governing law and dispute resolution
 
-These Terms are governed by the laws of India. Any dispute arising under these Terms shall be subject to the exclusive jurisdiction of the courts at `[JURISDICTION CITY]`, India. Before filing any formal claim, you agree to attempt good-faith resolution through email at legal@formready.in.
+These Terms are governed by the laws of India. Any dispute arising under these Terms shall be subject to the exclusive jurisdiction of the courts at `[JURISDICTION CITY]`, India. Before filing any formal claim, you agree to attempt good-faith resolution through email at legal@compress4.com.
 
 ### 14. Changes
 
@@ -458,7 +458,7 @@ We may update these Terms occasionally. Material changes (those that affect your
 
 ### 15. Contact
 
-For questions about these Terms: legal@formready.in. For privacy questions, see our Privacy Policy. For all other queries: hello@formready.in.
+For questions about these Terms: legal@compress4.com. For privacy questions, see our Privacy Policy. For all other queries: hello@compress4.com.
 
 ---
 
@@ -468,11 +468,11 @@ For questions about these Terms: legal@formready.in. For privacy questions, see 
 
 ### 1. About this notice
 
-India's **Digital Personal Data Protection Act, 2023** ("DPDP Act") regulates the processing of digital personal data of residents of India. This notice describes how FormReady complies with the DPDP Act. It is supplemental to our broader Privacy Policy; where there is any conflict between the two on DPDP-specific matters, this notice prevails for Indian residents.
+India's **Digital Personal Data Protection Act, 2023** ("DPDP Act") regulates the processing of digital personal data of residents of India. This notice describes how Compress4 complies with the DPDP Act. It is supplemental to our broader Privacy Policy; where there is any conflict between the two on DPDP-specific matters, this notice prevails for Indian residents.
 
 ### 2. The architecture-first approach
 
-The cleanest way to comply with a data protection law is to never collect personal data in the first place. FormReady is built around that principle. Single-file compression (PDF, image, photo, signature) runs entirely in your browser via WebAssembly. **The file content never reaches FormReady servers**, which means no personal data within those files ever becomes our responsibility under the DPDP Act.
+The cleanest way to comply with a data protection law is to never collect personal data in the first place. Compress4 is built around that principle. Single-file compression (PDF, image, photo, signature) runs entirely in your browser via WebAssembly. **The file content never reaches Compress4 servers**, which means no personal data within those files ever becomes our responsibility under the DPDP Act.
 
 You can verify this yourself at /privacy/verify: open DevTools, run a sample compression, watch the Network tab show zero outbound file requests.
 
@@ -490,14 +490,14 @@ For the purposes of the DPDP Act:
 - **Data Fiduciary**: `[LEGAL ENTITY NAME]`
 - **CIN**: `[CORPORATE IDENTIFICATION NUMBER]`
 - **Registered office**: `[REGISTERED ADDRESS, INDIA]`
-- **Email**: hello@formready.in
+- **Email**: hello@compress4.com
 
 ### 5. Grievance Officer
 
 Per §10 of the DPDP Act, our designated Grievance Officer:
 
 - **Name**: `[GRIEVANCE OFFICER NAME]`
-- **Email**: grievance@formready.in
+- **Email**: grievance@compress4.com
 - **Address**: `[REGISTERED ADDRESS, INDIA]`
 - **Hours**: Monday–Friday, 10:00–18:00 IST
 - **Response time**: we acknowledge grievances within 7 working days and resolve them within 30 days where reasonable.
@@ -507,7 +507,7 @@ Per §10 of the DPDP Act, our designated Grievance Officer:
 If you are a resident of India, the DPDP Act grants you the following rights:
 
 **6.1 Right to access (§11)**
-You may request a summary of the personal data we hold about you, the processing activities undertaken with it, and the identities of any Data Processors with whom it has been shared. Email grievance@formready.in; Pro users can self-serve this from /account/profile.
+You may request a summary of the personal data we hold about you, the processing activities undertaken with it, and the identities of any Data Processors with whom it has been shared. Email grievance@compress4.com; Pro users can self-serve this from /account/profile.
 
 **6.2 Right to correction and erasure (§12)**
 You may request correction of inaccurate data or erasure of your data. Erasure is subject to legal retention requirements — for example, GST invoices must be retained for 8 years per Indian tax law, but we anonymise them after account closure.
@@ -516,7 +516,7 @@ You may request correction of inaccurate data or erasure of your data. Erasure i
 You may submit a grievance to our Grievance Officer using the contact above. If unsatisfied with our response, you may approach the Data Protection Board of India.
 
 **6.4 Right of nomination (§14)**
-You may nominate another individual to exercise your rights in case of your death or incapacity. Email this nomination to grievance@formready.in with the nominee's name and contact details.
+You may nominate another individual to exercise your rights in case of your death or incapacity. Email this nomination to grievance@compress4.com with the nominee's name and contact details.
 
 ### 7. Lawful basis for processing
 
@@ -545,7 +545,7 @@ In the unlikely event of a personal data breach affecting Pro account data, per 
 
 ### 11. Significant Data Fiduciary status
 
-Based on our current scale of operations, FormReady is not classified as a Significant Data Fiduciary under §10 of the DPDP Act. If our processing volumes change such that this classification applies, we will appoint a Data Protection Officer, conduct annual data audits, and update this notice accordingly.
+Based on our current scale of operations, Compress4 is not classified as a Significant Data Fiduciary under §10 of the DPDP Act. If our processing volumes change such that this classification applies, we will appoint a Data Protection Officer, conduct annual data audits, and update this notice accordingly.
 
 ### 12. Updates to this notice
 
@@ -553,8 +553,8 @@ We may update this notice as the DPDP Act's rules and adjudicative orders evolve
 
 ### 13. Contact
 
-- Grievance Officer: grievance@formready.in — formal grievances
-- General privacy: privacy@formready.in
+- Grievance Officer: grievance@compress4.com — formal grievances
+- General privacy: privacy@compress4.com
 - Data Protection Board of India: dpb.gov.in — for unresolved complaints
 
 ---
@@ -567,7 +567,7 @@ We may update this notice as the DPDP Act's rules and adjudicative orders evolve
 
 A cookie is a small text file that a website stores in your browser to remember information between visits. Cookies can be "first-party" (set by the site you're visiting) or "third-party" (set by external services embedded in the page). They can be "session" (deleted when you close the browser) or "persistent" (kept for a set time).
 
-### 2. The complete list of cookies FormReady sets
+### 2. The complete list of cookies Compress4 sets
 
 We use as few cookies as possible. Here is the entire inventory:
 
@@ -583,7 +583,7 @@ We use as few cookies as possible. Here is the entire inventory:
 The following cookies are set by third-party services, and only when their respective features are active:
 
 - **Google AdSense** — sets cookies on tool and content pages where ads are shown. AdSense uses cookies for fraud prevention, frequency capping, and (with consent) personalised advertising. Manage your AdSense settings at adssettings.google.com.
-- **Razorpay** — sets cookies during the checkout flow for fraud prevention and to remember saved payment methods. These cookies are scoped to the Razorpay checkout iframe and never available to FormReady scripts.
+- **Razorpay** — sets cookies during the checkout flow for fraud prevention and to remember saved payment methods. These cookies are scoped to the Razorpay checkout iframe and never available to Compress4 scripts.
 - **Cloudflare Turnstile** — invisible captcha; *does not* set cookies under default configuration. Uses ephemeral browser-fingerprinting signals only.
 
 ### 4. What we don't do
@@ -611,7 +611,7 @@ We'll update this policy whenever a cookie is added, removed, or changes purpose
 
 ### 8. Questions
 
-For questions about cookies, email privacy@formready.in. See also our broader Privacy Policy.
+For questions about cookies, email privacy@compress4.com. See also our broader Privacy Policy.
 
 ---
 
@@ -628,4 +628,4 @@ For ease of correspondence, we'd appreciate your reply addressing the following 
 Thank you for reading this far. We're aware this is a long document — we wrote it long because we'd rather over-prepare than waste your time with back-and-forth.
 
 — `[FOUNDER NAME]`, on behalf of `[LEGAL ENTITY NAME]`
-hello@formready.in
+hello@compress4.com

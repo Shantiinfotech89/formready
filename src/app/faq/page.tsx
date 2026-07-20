@@ -38,7 +38,7 @@ export default function FaqPage() {
                 Questions, answered.
               </h1>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                The five things people ask most often, sorted by what they care about. If your question isn&apos;t here, email us at hello@formready.in.
+                The five things people ask most often, sorted by what they care about. If your question isn&apos;t here, email us at hello@compress4.com.
               </p>
             </div>
 
@@ -90,8 +90,8 @@ export default function FaqPage() {
             <h3 className="text-xl font-semibold">Question not here?</h3>
             <p className="text-sm text-muted-foreground">
               Email{' '}
-              <a className="font-medium text-primary-press underline-offset-4 hover:underline" href="mailto:hello@formready.in">
-                hello@formready.in
+              <a className="font-medium text-primary-press underline-offset-4 hover:underline" href="mailto:hello@compress4.com">
+                hello@compress4.com
               </a>{' '}
               and we&apos;ll add it (and reply).
             </p>
@@ -111,7 +111,7 @@ export default function FaqPage() {
                 '@id': 'https://compress4.com/#website',
                 url: 'https://compress4.com/',
                 name: 'Compress4',
-                alternateName: 'FormReady',
+                alternateName: 'Compress4',
                 potentialAction: {
                   '@type': 'SearchAction',
                   target: {

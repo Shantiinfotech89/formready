@@ -5,7 +5,7 @@ category: "how-to"
 excerpt: "What's actually happening when a tool 'compresses' a PDF, why some PDFs shrink dramatically and others barely budge, and how to pick the right strategy for your form."
 publishedAt: "2026-04-22"
 updatedAt: "2026-04-22"
-author: "FormReady Team"
+author: "Compress4 Team"
 relatedTools:
   - "/compress-pdf"
   - "/pdf-to-image"
@@ -33,7 +33,7 @@ Every PDF can have its internal structure rewritten with object streams, dedupli
 
 A typical text-heavy PDF compresses 5–20% this way. Sometimes 40% if the original was poorly authored.
 
-This is what FormReady tries first, because it's lossless and fast. If your target is hit by structural compression alone, no quality is lost.
+This is what Compress4 tries first, because it's lossless and fast. If your target is hit by structural compression alone, no quality is lost.
 
 ## Strategy 2 — Image re-encoding
 
@@ -47,7 +47,7 @@ For very tight targets, the most aggressive option is to render every page as a 
 
 This sounds bad, but for forms it's often fine: the form portal doesn't care whether your text is selectable. They care about KB and visual content.
 
-When FormReady can't hit your target via Strategies 1 and 2, it falls back to this. We tell you when it happens so you can choose to abandon if text selectability matters to you.
+When Compress4 can't hit your target via Strategies 1 and 2, it falls back to this. We tell you when it happens so you can choose to abandon if text selectability matters to you.
 
 ## Strategy 4 — Resolution + colour reduction
 
@@ -63,7 +63,7 @@ If you've used a tool that reports "couldn't compress further", one of these is 
 2. **The PDF is text-only** — there's nothing to lossy-compress; vectors are already minimal.
 3. **The tool doesn't try Strategy 3 or 4** — it caps out at quality reduction.
 
-For (3), use a tool that explicitly offers rasterisation (FormReady's [PDF compressor](/compress-pdf) does this automatically when needed) or convert each page to JPG first via [PDF to Image](/pdf-to-image), then back to PDF via [Image to PDF](/image-to-pdf) at a lower quality. This is the manual version of Strategy 3.
+For (3), use a tool that explicitly offers rasterisation (Compress4's [PDF compressor](/compress-pdf) does this automatically when needed) or convert each page to JPG first via [PDF to Image](/pdf-to-image), then back to PDF via [Image to PDF](/image-to-pdf) at a lower quality. This is the manual version of Strategy 3.
 
 ## Picking the right target
 
@@ -79,7 +79,7 @@ If your form requires "under 100 KB" for a 30-page scanned document, that target
 
 ## What "client-side compression" means
 
-FormReady runs all four strategies in your browser via WebAssembly. Your file is loaded into memory, compressed, and the result is saved locally. No upload happens.
+Compress4 runs all four strategies in your browser via WebAssembly. Your file is loaded into memory, compressed, and the result is saved locally. No upload happens.
 
 You can verify this on [our verify page](/privacy/verify) by opening DevTools → Network tab and watching for outbound requests during compression. There are none. This isn't a marketing claim; it's mathematically required by how the page is built.
 

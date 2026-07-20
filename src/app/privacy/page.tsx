@@ -33,7 +33,7 @@ export default function PrivacyPage() {
       </p>
       <p>
         For questions about this policy or any privacy matter, contact our Grievance Officer:{' '}
-        <a href="mailto:grievance@formready.in">grievance@formready.in</a>{' '}
+        <a href="mailto:grievance@compress4.com">grievance@compress4.com</a>{' '}
         ([GRIEVANCE OFFICER NAME], available Monday–Friday, 10:00–18:00 IST).
       </p>
 
@@ -151,9 +151,9 @@ export default function PrivacyPage() {
       <h2>15. Contact</h2>
       <p>For privacy-related queries:</p>
       <ul>
-        <li>Email: <a href="mailto:privacy@formready.in">privacy@formready.in</a> — general privacy questions</li>
-        <li>Grievance Officer: <a href="mailto:grievance@formready.in">grievance@formready.in</a> — formal grievance under the DPDP Act</li>
-        <li>Data Protection Officer: <a href="mailto:dpo@formready.in">dpo@formready.in</a> — GDPR matters</li>
+        <li>Email: <a href="mailto:privacy@compress4.com">privacy@compress4.com</a> — general privacy questions</li>
+        <li>Grievance Officer: <a href="mailto:grievance@compress4.com">grievance@compress4.com</a> — formal grievance under the DPDP Act</li>
+        <li>Data Protection Officer: <a href="mailto:dpo@compress4.com">dpo@compress4.com</a> — GDPR matters</li>
       </ul>
       <p>
         If you are not satisfied with our response, you have the right to lodge a complaint with the Data Protection Board of India (<a href="https://dpb.gov.in" target="_blank" rel="noreferrer">dpb.gov.in</a>) or, for EU/UK residents, with your local supervisory authority.

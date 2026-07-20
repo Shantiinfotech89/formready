@@ -44,7 +44,7 @@ const withPWA = withPWAInit({
  *   from canvas readouts.
  * - `worker-src 'self' blob:`: pdfjs creates workers from `/pdf.worker.min.mjs`
  *   (self) and libheif spawns blob-URL workers internally.
- * - `frame-ancestors 'none'`: clickjacking protection — FormReady can never be
+ * - `frame-ancestors 'none'`: clickjacking protection — Compress4 can never be
  *   framed by another origin.
  * - `upgrade-insecure-requests`: any leftover http:// URL becomes https://.
  */

@@ -1,8 +1,8 @@
-# FormReady — MVP Gap Audit
+# Compress4 — MVP Gap Audit
 
 **As of:** May 2026 · **Scope:** what remains to launch publicly per the SOW
 
-This document audits the current build against `SOW_FormReady_PDF_Image_Compression.md` and `SCREENS_PLAN.md`, marks each item ✅ done, ⚠️ partial, or ❌ missing, and categorises the work into three buckets so you can see what's actually launch-blocking.
+This document audits the current build against `SOW_Compress4_PDF_Image_Compression.md` and `SCREENS_PLAN.md`, marks each item ✅ done, ⚠️ partial, or ❌ missing, and categorises the work into three buckets so you can see what's actually launch-blocking.
 
 ---
 
@@ -139,7 +139,7 @@ These are all explicitly Phase 2 in the SOW; not gaps for MVP.
 These are environmental/integration items, not new code. Most are env-variable + small config changes.
 
 ### 1. Real domain + DNS — ❌ blocking
-- Register `formready.in` (if not already)
+- Register `compress4.com` (if not already)
 - Point CNAME to Vercel
 - SSL auto-provisioned by Vercel
 
@@ -155,8 +155,8 @@ These are environmental/integration items, not new code. Most are env-variable +
 - **Until we add this, we have zero data on traffic** — and that's the entire point of the "ship first, monetize after traffic" strategy you chose
 
 ### 4. Google Search Console + sitemap submission — ⚠️ blocking
-- Verify ownership of `formready.in`
-- Submit `https://formready.in/sitemap.xml`
+- Verify ownership of `compress4.com`
+- Submit `https://compress4.com/sitemap.xml`
 - Set up GSC API key for IndexNow auto-ping (Phase 2 admin work)
 
 ### 5. Sentry error tracking — ⚠️ recommended

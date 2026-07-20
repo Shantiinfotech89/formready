@@ -89,8 +89,8 @@ export default async function BlogIndexPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Blog',
-            name: 'FormReady Blog',
-            url: 'https://formready.in/blog',
+            name: 'Compress4 Blog',
+            url: 'https://compress4.com/blog',
             inLanguage: 'en-IN',
           }),
         }}

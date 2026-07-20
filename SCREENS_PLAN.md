@@ -1,4 +1,4 @@
-# FormReady — Screens Plan
+# Compress4 — Screens Plan
 
 **Version 1.1 · Locked.** Source-of-truth for what gets built and in what order.
 
@@ -81,7 +81,7 @@ Batch 9 (Admin Core) ──→ Batch 10 (Admin Content) ──→ Batch 3 publis
 
 - **Role:** Guest
 - **Purpose:** First impression. Get user into a tool within 10 seconds.
-- **Sections:** Sticky nav (with Hindi toggle) → hero (H1 + lede + CTA primary + secondary) → privacy lockup compact → 4 large tool cards (PDF / Image / Photo / Signature) → expanded TrustStrip → "X documents made form-ready today" live counter (anonymous beacon) → mini quick-link strip (top 8 exam pages, top 4 visa pages) → 5-question FAQ → footer with PrivacyLockup full.
+- **Sections:** Sticky nav (with Hindi toggle) → hero (H1 + lede + CTA primary + secondary) → privacy lockup compact → 4 large tool cards (PDF / Image / Photo / Signature) → expanded TrustStrip → "X documents made compress4 today" live counter (anonymous beacon) → mini quick-link strip (top 8 exam pages, top 4 visa pages) → 5-question FAQ → footer with PrivacyLockup full.
 - **Reuses:** Layout shell + hero pattern + TrustStrip + tool cards (already in design-system page).
 - **States:** Default · counter loading · counter error (hide, don't break).
 
