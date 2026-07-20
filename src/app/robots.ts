@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-// const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://formready.in'
+// const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://compress4.com'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://compress4.com'
 
 export default function robots(): MetadataRoute.Robots {

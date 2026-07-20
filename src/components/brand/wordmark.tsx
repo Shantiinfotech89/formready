@@ -20,7 +20,7 @@ export function Wordmark({ size = 'md', className, ...props }: WordmarkProps) {
         sizeClasses[size],
         className,
       )}
-      aria-label="FormReady"
+      aria-label="Compress4"
       {...props}
     >
       <Image

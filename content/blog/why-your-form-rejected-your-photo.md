@@ -5,7 +5,7 @@ category: "how-to"
 excerpt: "Eight reasons government and visa portals reject photos, and the exact fix for each — from background colour to KB limits to head proportions."
 publishedAt: "2026-04-15"
 updatedAt: "2026-04-15"
-author: "FormReady Team"
+author: "Compress4 Team"
 relatedTools:
   - "/photo-signature"
   - "/compress-image"
@@ -28,7 +28,7 @@ Most Indian government forms cap photos at 20–50 KB. Most modern phones produc
 
 **Fix:** use a tool that targets exact KB. Drop your photo, type the limit your form requires, get a file at or under it. No trial-and-error with quality sliders.
 
-The tighter the limit, the more important it is the tool actually hits the number — not "low / medium / high" but the exact KB. That's the entire reason FormReady exists.
+The tighter the limit, the more important it is the tool actually hits the number — not "low / medium / high" but the exact KB. That's the entire reason Compress4 exists.
 
 ## 2. The dimensions are wrong
 
@@ -91,7 +91,7 @@ Most forms require photos taken within the last 6 months. Forms can detect old p
 
 **Fix:** retake. It takes 30 seconds. Don't reuse a 2-year-old photo to save effort — it'll just delay your application.
 
-## What FormReady does (and doesn't)
+## What Compress4 does (and doesn't)
 
 We can hit exact pixels and exact KB. We can convert HEIC to JPG. We can grayscale and clean up signatures. What we *can't* do for you:
 

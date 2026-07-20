@@ -19,7 +19,7 @@ export const landingPages: LandingPage[] = [
     category: 'exam-photo',
     toolType: 'photo-signature',
     saffron: true,
-    metaTitle: 'SSC CGL Photo Size — 200×230 px, 20–50 KB · FormReady',
+    metaTitle: 'SSC CGL Photo Size — 200×230 px, 20–50 KB · Compress4',
     metaDescription:
       'Resize your SSC CGL photo to the exact 200×230 px and 20–50 KB the official form demands. Plus signature 140×60 px, 10–20 KB. All in your browser.',
     h1: 'SSC CGL Photo Size',
@@ -61,7 +61,7 @@ export const landingPages: LandingPage[] = [
     category: 'exam-photo',
     toolType: 'photo-signature',
     saffron: true,
-    metaTitle: 'UPSC CSE Photo Size — 350×350 px, max 300 KB · FormReady',
+    metaTitle: 'UPSC CSE Photo Size — 350×350 px, max 300 KB · Compress4',
     metaDescription:
       'Resize your UPSC Civil Services photo to 350×350 px, under 300 KB. JPG with white background. Free, exact, in-browser. No upload.',
     h1: 'UPSC CSE Photo Size',
@@ -99,7 +99,7 @@ export const landingPages: LandingPage[] = [
     category: 'exam-photo',
     toolType: 'photo-signature',
     saffron: true,
-    metaTitle: 'NEET UG Photo Size — 200×230 px, 10–200 KB · FormReady',
+    metaTitle: 'NEET UG Photo Size — 200×230 px, 10–200 KB · Compress4',
     metaDescription:
       'NEET UG photo: 200×230 px, 10–200 KB. Signature: 140×60 px, 4–30 KB. Drop your image, get exact size, in your browser. No upload.',
     h1: 'NEET UG Photo Size',
@@ -137,7 +137,7 @@ export const landingPages: LandingPage[] = [
     category: 'exam-photo',
     toolType: 'photo-signature',
     saffron: true,
-    metaTitle: 'IBPS PO Photo Size — 200×230 px, 20–50 KB · FormReady',
+    metaTitle: 'IBPS PO Photo Size — 200×230 px, 20–50 KB · Compress4',
     metaDescription:
       'IBPS PO photo: 200×230 px, 20–50 KB. Signature: 140×60 px, 10–20 KB. Compress and resize in your browser. No upload.',
     h1: 'IBPS PO Photo Size',
@@ -175,7 +175,7 @@ export const landingPages: LandingPage[] = [
     category: 'exam-photo',
     toolType: 'photo-signature',
     saffron: true,
-    metaTitle: 'JEE Main Photo Size — 200×230 px, 10–200 KB · FormReady',
+    metaTitle: 'JEE Main Photo Size — 200×230 px, 10–200 KB · Compress4',
     metaDescription:
       'JEE Main photo: 200×230 px, 10–200 KB. Signature: 140×60 px, 4–30 KB. Free, instant, in-browser. No upload.',
     h1: 'JEE Main Photo Size',
@@ -214,7 +214,7 @@ export const landingPages: LandingPage[] = [
     category: 'visa-photo',
     toolType: 'photo-signature',
     saffron: false,
-    metaTitle: 'US Visa Photo Size — 600×600 px, max 240 KB · FormReady',
+    metaTitle: 'US Visa Photo Size — 600×600 px, max 240 KB · Compress4',
     metaDescription:
       'US visa photo: 600×600 pixels, under 240 KB, head 50–69% of frame, white background. Resize and compress in your browser. No upload.',
     h1: 'US Visa Photo Size',
@@ -254,7 +254,7 @@ export const landingPages: LandingPage[] = [
     category: 'visa-photo',
     toolType: 'photo-signature',
     saffron: false,
-    metaTitle: 'UK Visa Photo Size — 45×35 mm, max 240 KB · FormReady',
+    metaTitle: 'UK Visa Photo Size — 45×35 mm, max 240 KB · Compress4',
     metaDescription:
       'UK Standard Visitor visa photo: 45×35 mm (531×413 px), 45–240 KB, plain off-white. Resize and compress in your browser. No upload.',
     h1: 'UK Visa Photo Size',
@@ -290,7 +290,7 @@ export const landingPages: LandingPage[] = [
     category: 'visa-photo',
     toolType: 'photo-signature',
     saffron: false,
-    metaTitle: 'Schengen Visa Photo Size — 35×45 mm, max 240 KB · FormReady',
+    metaTitle: 'Schengen Visa Photo Size — 35×45 mm, max 240 KB · Compress4',
     metaDescription:
       'Schengen visa photo: 35×45 mm (413×531 px), under 240 KB, plain light background. Resize and compress in your browser.',
     h1: 'Schengen Visa Photo Size',
@@ -327,7 +327,7 @@ export const landingPages: LandingPage[] = [
     category: 'pdf-size',
     toolType: 'pdf',
     saffron: false,
-    metaTitle: 'Compress PDF under 100 KB — Free, in-browser · FormReady',
+    metaTitle: 'Compress PDF under 100 KB — Free, in-browser · Compress4',
     metaDescription:
       'Compress any PDF to under 100 KB without uploading. Hit the exact size your form portal demands. All client-side — your file never leaves your device.',
     h1: 'Compress PDF under 100 KB',
@@ -360,7 +360,7 @@ export const landingPages: LandingPage[] = [
     category: 'image-size',
     toolType: 'image',
     saffron: false,
-    metaTitle: 'Compress Image under 50 KB — Free, in-browser · FormReady',
+    metaTitle: 'Compress Image under 50 KB — Free, in-browser · Compress4',
     metaDescription:
       'Compress JPG, PNG, WebP, or HEIC to under 50 KB without uploading. Common limit for exam photos, signatures, and ID uploads. All in your browser.',
     h1: 'Compress Image under 50 KB',

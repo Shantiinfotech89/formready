@@ -254,12 +254,12 @@ export default function LandingPage({ params }: PageProps) {
             '@type': 'WebPage',
             name: page.metaTitle,
             description: page.metaDescription,
-            url: `https://formready.in/${page.slug}`,
+            url: `https://compress4.com/${page.slug}`,
             inLanguage: 'en-IN',
             isPartOf: {
               '@type': 'WebSite',
-              name: 'FormReady',
-              url: 'https://formready.in',
+              name: 'Compress4',
+              url: 'https://compress4.com',
             },
           }),
         }}

@@ -152,8 +152,8 @@ export default function AboutPage() {
               <h2 className="text-xl font-bold tracking-tight">Verifiably private — by code</h2>
               <p className="mt-2 text-base leading-relaxed text-muted-foreground">
                 We open-source the compression engine on GitHub so anyone can audit it. The privacy claim isn&apos;t something you have to take our word for — open the source, read the network calls (there are none for file content), and verify it matches what we say. If you find a security issue, please email{' '}
-                <a href="mailto:security@formready.in" className="font-medium text-primary-press underline-offset-4 hover:underline">
-                  security@formready.in
+                <a href="mailto:security@compress4.com" className="font-medium text-primary-press underline-offset-4 hover:underline">
+                  security@compress4.com
                 </a>{' '}
                 before public disclosure.
               </p>
@@ -205,11 +205,11 @@ export default function AboutPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'AboutPage',
-            url: 'https://formready.in/about',
+            url: 'https://compress4.com/about',
             mainEntity: {
               '@type': 'Organization',
-              name: 'FormReady',
-              url: 'https://formready.in',
+              name: 'Compress4',
+              url: 'https://compress4.com',
             },
           }),
         }}

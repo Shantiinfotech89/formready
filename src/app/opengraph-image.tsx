@@ -8,7 +8,7 @@ import { ImageResponse } from 'next/og'
  */
 
 export const runtime = 'edge'
-export const alt = 'FormReady — get your documents form-ready, without uploading them.'
+export const alt = 'Compress4 — get your documents compress4, without uploading them.'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -62,7 +62,7 @@ export default async function OgImage() {
                 letterSpacing: '-0.02em',
               }}
             >
-              FormReady
+              Compress4
             </div>
           </div>
           <div
@@ -132,7 +132,7 @@ export default async function OgImage() {
               background: '#10B981',
             }}
           />
-          formready.in
+          compress4.com
         </div>
       </div>
     ),

@@ -79,7 +79,7 @@ const plans: Plan[] = [
     badge: { label: 'Coming soon', variant: 'warning' },
     description: 'Everything in Free, plus the power-user stack.',
     ctaLabel: 'Notify me at launch',
-    ctaHref: 'mailto:hello@formready.in?subject=Notify%20me%20when%20FormReady%20Pro%20launches',
+    ctaHref: 'mailto:hello@compress4.com?subject=Notify%20me%20when%20Compress4%20Pro%20launches',
     ctaVariant: 'primary',
     available: false,
     features: [
@@ -101,7 +101,7 @@ const plans: Plan[] = [
     badge: { label: 'Coming soon · Save 32%', variant: 'success' },
     description: 'Same as Pro Monthly, billed once a year.',
     ctaLabel: 'Notify me at launch',
-    ctaHref: 'mailto:hello@formready.in?subject=Notify%20me%20when%20FormReady%20Pro%20Annual%20launches',
+    ctaHref: 'mailto:hello@compress4.com?subject=Notify%20me%20when%20Compress4%20Pro%20Annual%20launches',
     ctaVariant: 'glow',
     highlight: true,
     available: false,
@@ -122,7 +122,7 @@ const plans: Plan[] = [
     badge: { label: 'Coming soon', variant: 'info' },
     description: 'For developers integrating compression into their own apps.',
     ctaLabel: 'Notify me at launch',
-    ctaHref: 'mailto:hello@formready.in?subject=Notify%20me%20when%20the%20FormReady%20API%20launches',
+    ctaHref: 'mailto:hello@compress4.com?subject=Notify%20me%20when%20the%20Compress4%20API%20launches',
     ctaVariant: 'secondary',
     available: false,
     features: [
@@ -157,7 +157,7 @@ const featurePillars = [
 const faqs = [
   {
     q: 'When will Pro launch?',
-    a: 'We\'re currently in build phase — Pro auth, billing (Razorpay), and the dashboard are scheduled for the next major milestone. Drop your email at hello@formready.in and we\'ll write to you the day it goes live (no marketing list, just one launch email).',
+    a: 'We\'re currently in build phase — Pro auth, billing (Razorpay), and the dashboard are scheduled for the next major milestone. Drop your email at hello@compress4.com and we\'ll write to you the day it goes live (no marketing list, just one launch email).',
   },
   {
     q: 'Is there really no signup needed for the free tier?',
@@ -177,7 +177,7 @@ const faqs = [
   },
   {
     q: 'What about students and educational institutions?',
-    a: 'We\'re building education pricing for verified institutions (currently early access for established coaching centres). Email hello@formready.in with .edu / institutional credentials.',
+    a: 'We\'re building education pricing for verified institutions (currently early access for established coaching centres). Email hello@compress4.com with .edu / institutional credentials.',
   },
   {
     q: 'Will the price change?',
@@ -373,8 +373,8 @@ export default function PricingPage() {
             <h3 className="text-xl font-semibold">Want to know the moment Pro launches?</h3>
             <p className="text-sm text-muted-foreground">
               Drop us an email at{' '}
-              <a className="font-medium text-primary-press underline-offset-4 hover:underline" href="mailto:hello@formready.in?subject=Notify%20me%20when%20Pro%20launches">
-                hello@formready.in
+              <a className="font-medium text-primary-press underline-offset-4 hover:underline" href="mailto:hello@compress4.com?subject=Notify%20me%20when%20Pro%20launches">
+                hello@compress4.com
               </a>{' '}
               and we&apos;ll write back exactly once — the day it&apos;s live.
             </p>

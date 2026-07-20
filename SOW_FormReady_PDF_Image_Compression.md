@@ -1,6 +1,6 @@
 # SCOPE OF WORK (SOW)
 
-## Project: FormReady.in — Exact-Size PDF & Image Compression Platform
+## Project: compress4.com — Exact-Size PDF & Image Compression Platform
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Field | Value |
 |---|---|
-| **Project Name** | FormReady.in — Get Your Documents Form-Ready |
+| **Project Name** | compress4.com — Get Your Documents Compress4 |
 | **Document Type** | Scope of Work (SOW) / Functional Requirements Document |
 | **Version** | 1.0 |
 | **Prepared By** | Product Architecture Team |
@@ -48,9 +48,9 @@
 
 ### Overview
 
-FormReady.in is a privacy-first web utility platform that solves a small but universally-painful problem: getting documents to fit *exact* file size limits demanded by online forms. Every Indian student applying to SSC, UPSC, NEET, JEE, GATE, IBPS, or any state government exam has lost an hour to "your photo must be under 50KB and your signature under 10KB." Every visa applicant — US B1/B2, UK, Schengen, Canada PR — fights with a 240KB photo limit. Every property registration portal demands "PDF below 500KB." Existing tools (iLovePDF, SmallPDF, Adobe Acrobat Online) give users generic "low / medium / high" compression sliders that force endless trial-and-error to hit the right size.
+compress4.com is a privacy-first web utility platform that solves a small but universally-painful problem: getting documents to fit *exact* file size limits demanded by online forms. Every Indian student applying to SSC, UPSC, NEET, JEE, GATE, IBPS, or any state government exam has lost an hour to "your photo must be under 50KB and your signature under 10KB." Every visa applicant — US B1/B2, UK, Schengen, Canada PR — fights with a 240KB photo limit. Every property registration portal demands "PDF below 500KB." Existing tools (iLovePDF, SmallPDF, Adobe Acrobat Online) give users generic "low / medium / high" compression sliders that force endless trial-and-error to hit the right size.
 
-FormReady.in fixes this by accepting an **exact target size in KB** as the primary input. The user enters "100KB," uploads a file, and the tool iteratively compresses until it lands at or below that target — no guessing, no re-uploading, no DPI math. All compression happens in the user's browser using WebAssembly-compiled compression libraries; no file content ever touches our servers. The platform launches with three core tools (PDF compression to exact KB, image compression to exact KB, passport-style photo resizer) and a library of pre-configured tool pages for the most-searched use cases ("compress photo for SSC," "passport photo for US visa," "UPSC signature size," "NEET application photo size," etc.) — each one a separate landing page targeting a specific long-tail keyword.
+compress4.com fixes this by accepting an **exact target size in KB** as the primary input. The user enters "100KB," uploads a file, and the tool iteratively compresses until it lands at or below that target — no guessing, no re-uploading, no DPI math. All compression happens in the user's browser using WebAssembly-compiled compression libraries; no file content ever touches our servers. The platform launches with three core tools (PDF compression to exact KB, image compression to exact KB, passport-style photo resizer) and a library of pre-configured tool pages for the most-searched use cases ("compress photo for SSC," "passport photo for US visa," "UPSC signature size," "NEET application photo size," etc.) — each one a separate landing page targeting a specific long-tail keyword.
 
 The site monetizes via Google AdSense on tool and content pages (high-intent education and visa traffic with decent CPC), affiliate revenue from coaching platforms (Unacademy, Byju's, Khan Academy), and a low-priced Pro tier (₹49/month or ₹399/year) for batch processing, API access, ad removal, and team usage.
 
@@ -682,7 +682,7 @@ This is the SECRET WEAPON module — purpose-built tools for the most-searched, 
 As an SSC/UPSC/NEET/JEE/IBPS aspirant, I want a tool that matches my exam's exact photo specifications (dimensions in mm/pixels + KB range), so that I don't get rejected for size mismatch.
 
 **Description:**
-A library of pre-configured resize templates for each major Indian exam. User picks their exam → the tool already knows the exact pixel dimensions, format, KB range, background color expectation. User uploads photo → output is form-ready.
+A library of pre-configured resize templates for each major Indian exam. User picks their exam → the tool already knows the exact pixel dimensions, format, KB range, background color expectation. User uploads photo → output is compress4.
 
 **Field Details (per exam preset):**
 
@@ -765,7 +765,7 @@ Same model as exam photos, but for visa types: US (B1/B2, F1, etc.), UK, Schenge
 4. Upload photo → face detection → checks head-to-photo ratio.
 5. If head is too small/large in frame → show overlay grid + crop guides.
 6. Background check.
-7. Output: form-ready file.
+7. Output: compress4 file.
 
 **Business Rules:**
 - Specs sourced from official consulate/embassy websites and dated.
@@ -998,7 +998,7 @@ Render each page of a PDF as a separate image file (JPG/PNG/WebP), with optional
 #### Feature 2.1.4.3 — Crop & Rotate (Pre-compression)
 
 **User Story:**
-As a user whose photo has wrong orientation or extra background, I want to crop and rotate before compression, so that the output is form-ready.
+As a user whose photo has wrong orientation or extra background, I want to crop and rotate before compression, so that the output is compress4.
 
 **Description:**
 Lightweight pre-compression editor: rotate (90°/180°/270°), crop with aspect ratio presets (square, passport, A4), straighten skewed scans.
@@ -1204,11 +1204,11 @@ Clean landing page with the 4 primary tool cards (PDF, Image, Photo, Signature),
 
 **Workflow:**
 1. User lands on `/`.
-2. Hero: "Get your document form-ready. Exact KB, exact dimensions, in one click."
+2. Hero: "Get your document compress4. Exact KB, exact dimensions, in one click."
 3. 4 large tool cards.
 4. "Quick links" to top 10 exam-specific pages and top 5 visa pages.
-5. Live counter: "X documents made form-ready today" (anonymous beacon).
-6. "Why FormReady" 3-icon trust strip.
+5. Live counter: "X documents made compress4 today" (anonymous beacon).
+6. "Why Compress4" 3-icon trust strip.
 7. FAQ (5 key questions).
 8. Footer with full sitemap.
 
@@ -2593,7 +2593,7 @@ Monthly report of Indian invoices with GST splits.
 
 ## Appendix C: Why This Beats the Aadhaar Masking Idea
 
-| Dimension | Aadhaar Masking | FormReady |
+| Dimension | Aadhaar Masking | Compress4 |
 |---|---|---|
 | Trust barrier to first use | Very high (sensitive doc) | Low (utility task) |
 | Search volume of best keywords | ~30–80K/month | ~300K+/month combined |
@@ -2625,4 +2625,4 @@ Monthly report of Indian invoices with GST splits.
 
 ---
 
-*End of Scope of Work — FormReady.in v1.0*
+*End of Scope of Work — compress4.com v1.0*

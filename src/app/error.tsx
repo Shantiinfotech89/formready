@@ -54,8 +54,8 @@ export default function RouteError({ error, reset }: ErrorProps) {
                   <p className="num mt-1 break-all text-sm text-foreground">{error.digest}</p>
                   <p className="mt-2 text-xs text-muted-foreground">
                     Include this code if you email{' '}
-                    <a href="mailto:bugs@formready.in" className="text-primary-press underline-offset-4 hover:underline">
-                      bugs@formready.in
+                    <a href="mailto:bugs@compress4.com" className="text-primary-press underline-offset-4 hover:underline">
+                      bugs@compress4.com
                     </a>{' '}
                     so we can find your specific failure quickly.
                   </p>

@@ -39,8 +39,8 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
           </h1>
           <p style={{ fontSize: 16, color: '#475569', marginTop: 16, lineHeight: 1.6 }}>
             The application crashed before it could render. Refresh to try again. If the problem persists, email{' '}
-            <a href="mailto:bugs@formready.in" style={{ color: '#2935A8', textDecoration: 'underline' }}>
-              bugs@formready.in
+            <a href="mailto:bugs@compress4.com" style={{ color: '#2935A8', textDecoration: 'underline' }}>
+              bugs@compress4.com
             </a>
             {error.digest ? ` with reference ${error.digest}` : ''}.
           </p>

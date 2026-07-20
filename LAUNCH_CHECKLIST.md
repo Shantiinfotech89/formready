@@ -1,4 +1,4 @@
-# FormReady — Launch Checklist
+# Compress4 — Launch Checklist
 
 **As of:** 2026-05-09 · **Status:** code-complete; awaiting infra + legal + content
 
@@ -50,7 +50,7 @@ These cannot ship without explicit user input or external action.
 - **What:** all four legal pages are v0 drafts with `[BRACKETED]` placeholders
 - **Status:** `LAWYER_BRIEF.md` is ready to email to a privacy/commercial-law lawyer
 - **What needs filling in once a lawyer signs off:**
-  - `[LEGAL ENTITY NAME — e.g., FormReady Technologies Pvt Ltd]`
+  - `[LEGAL ENTITY NAME — e.g., Compress4 Technologies Pvt Ltd]`
   - `[CIN]` (Corporate Identification Number)
   - `[REGISTERED ADDRESS]`
   - `[GRIEVANCE OFFICER NAME]`
@@ -58,11 +58,11 @@ These cannot ship without explicit user input or external action.
 - **Until done:** site says "v0 draft" prominently in the privacy banner — fine for soft launch but not for paid traffic.
 
 ### 2. Domain + DNS + Vercel deploy
-- **What:** register `formready.in`, point CNAME to Vercel, verify SSL
+- **What:** register `compress4.com`, point CNAME to Vercel, verify SSL
 - **Steps:**
   1. Confirm domain registration (or register at e.g. GoDaddy/Namecheap)
   2. Create Vercel project, link GitHub repo
-  3. Add custom domain `formready.in` + `www.formready.in`
+  3. Add custom domain `compress4.com` + `www.compress4.com`
   4. Set env vars on Vercel (see §Env vars below)
   5. Push to `main` → auto-deploy
 - **Estimated time:** 30 min once you have access to all accounts.
@@ -70,14 +70,14 @@ These cannot ship without explicit user input or external action.
 ### 3. Real support email mailboxes
 The site references 7 distinct email addresses. They must all route somewhere
 before launch — even if all 7 are aliases of one inbox to start:
-- `hello@formready.in` (general)
-- `support@formready.in` (user issues)
-- `security@formready.in` (vulnerability disclosure)
-- `bugs@formready.in` (bug reports)
-- `billing@formready.in` (future Pro)
-- `press@formready.in`
-- `grievance@formready.in` (DPDP grievance officer)
-- `privacy@formready.in` + `dpo@formready.in` + `legal@formready.in`
+- `hello@compress4.com` (general)
+- `support@compress4.com` (user issues)
+- `security@compress4.com` (vulnerability disclosure)
+- `bugs@compress4.com` (bug reports)
+- `billing@compress4.com` (future Pro)
+- `press@compress4.com`
+- `grievance@compress4.com` (DPDP grievance officer)
+- `privacy@compress4.com` + `dpo@compress4.com` + `legal@compress4.com`
 
 **Recommended:** Google Workspace or Zoho Mail. Set up `hello@` as the primary
 and the rest as forwards.
@@ -87,18 +87,18 @@ and the rest as forwards.
 ## 🟡 Strongly recommended before launch (but not blocking)
 
 ### 4. Plausible signup
-- **What:** create a Plausible site for `formready.in`
+- **What:** create a Plausible site for `compress4.com`
 - **Steps:** sign up at plausible.io ($9/mo) → add site → copy the data-domain
-- **Then:** set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=formready.in` on Vercel
+- **Then:** set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=compress4.com` on Vercel
 - **Why now:** the entire "ship-first, monetize after traffic" strategy depends on
   knowing how much traffic we have. Without analytics, we're flying blind.
 
 ### 5. Google Search Console + Bing Webmaster Tools
 - **What:** verify ownership, submit sitemap
 - **Steps:**
-  1. Add `https://formready.in` to GSC
+  1. Add `https://compress4.com` to GSC
   2. Verify via DNS TXT record (Vercel makes this easy)
-  3. Submit `https://formready.in/sitemap.xml`
+  3. Submit `https://compress4.com/sitemap.xml`
   4. Repeat in Bing Webmaster Tools
 - **Estimated time:** 20 min total.
 
@@ -137,8 +137,8 @@ flip the visibility flag.
 ## Env vars to set on Vercel
 
 ```
-NEXT_PUBLIC_SITE_URL=https://formready.in
-NEXT_PUBLIC_PLAUSIBLE_DOMAIN=formready.in        # after Plausible signup
+NEXT_PUBLIC_SITE_URL=https://compress4.com
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=compress4.com        # after Plausible signup
 SENTRY_DSN=...                                    # after Sentry signup (auto-set by wizard)
 SENTRY_AUTH_TOKEN=...                             # for sourcemap uploads (auto-set)
 ```
@@ -153,7 +153,7 @@ privacy stance means there's nothing on the server side to configure.
 | Day | Task | Who |
 |---|---|---|
 | **1** | Send `LAWYER_BRIEF.md` to privacy lawyer (start clock) | You |
-| **1** | Register `formready.in` if not already | You |
+| **1** | Register `compress4.com` if not already | You |
 | **1** | Set up Google Workspace + 7 email aliases | You |
 | **2** | Vercel project + custom domain + DNS | You (15 min) |
 | **2** | Plausible signup + add env var | You (10 min) |
@@ -176,16 +176,16 @@ Single biggest dependency: **the lawyer.** Everything else is hours, not days.
 
 After Vercel deploys to production:
 
-1. `curl -I https://formready.in/` → 200, HSTS header present
-2. `curl https://formready.in/sitemap.xml` → valid XML with all 40 routes
-3. `curl https://formready.in/robots.txt` → references the sitemap
+1. `curl -I https://compress4.com/` → 200, HSTS header present
+2. `curl https://compress4.com/sitemap.xml` → valid XML with all 40 routes
+3. `curl https://compress4.com/robots.txt` → references the sitemap
 4. Visit `/compress-pdf` on phone → run real compression → verify toast fires
 5. DevTools → Network tab → run compression → confirm **zero** outbound requests
    (this is the headline trust claim)
 6. Lighthouse audit on `/` → ≥90 mobile across all four categories
 7. Plausible dashboard → first page-view event from your test visit shows up
 8. Test all 7 email addresses receive (send a test from an external account)
-9. View `https://formready.in/opengraph-image` → renders the OG card
+9. View `https://compress4.com/opengraph-image` → renders the OG card
 10. Add to home screen on iOS → confirms apple-touch icon shows up correctly
 
 If all 10 pass: you're live.

@@ -38,7 +38,7 @@ export function SampleCompressButton({
     const doc = await PDFDocument.create()
     for (let i = 0; i < 3; i++) {
       const page = doc.addPage([595, 842])
-      page.drawText(`FormReady sample · page ${i + 1} of 3`, {
+      page.drawText(`Compress4 sample · page ${i + 1} of 3`, {
         x: 50,
         y: 800,
         size: 18,
@@ -51,7 +51,7 @@ export function SampleCompressButton({
       )
     }
     const bytes = await doc.save()
-    const file = new File([new Uint8Array(bytes).buffer], 'formready-sample.pdf', { type: 'application/pdf' })
+    const file = new File([new Uint8Array(bytes).buffer], 'compress4-sample.pdf', { type: 'application/pdf' })
 
     await compressPdf(file, {
       targetKb: 50,

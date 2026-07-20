@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'Is my photo / face safer here than at iLovePDF or SmallPDF?',
-    a: 'Yes — fundamentally. Those tools upload your photo to their servers to compress it. Your face transits the internet, sits on their disk during processing, and depends on their privacy policy and security to be deleted afterwards. With FormReady your photo is never transmitted at all — it\'s processed entirely in your browser via WebAssembly. There\'s no privacy policy to trust because there\'s no upload to govern.',
+    a: 'Yes — fundamentally. Those tools upload your photo to their servers to compress it. Your face transits the internet, sits on their disk during processing, and depends on their privacy policy and security to be deleted afterwards. With Compress4 your photo is never transmitted at all — it\'s processed entirely in your browser via WebAssembly. There\'s no privacy policy to trust because there\'s no upload to govern.',
   },
   {
     q: 'How do you pick the right pixel size?',

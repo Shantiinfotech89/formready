@@ -1,6 +1,6 @@
 /**
  * Typed wrapper around Sonner's toast() so consumers don't have to think about
- * options. Adds FormReady-specific defaults (e.g., a reassuring privacy
+ * options. Adds Compress4-specific defaults (e.g., a reassuring privacy
  * suffix on download success).
  */
 import { toast as sonnerToast } from 'sonner'

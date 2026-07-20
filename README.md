@@ -1,4 +1,4 @@
-# FormReady
+# Compress4
 
 Privacy-first PDF & image compression to **exact KB**. All compression happens in your browser — your file never leaves your device.
 
@@ -6,7 +6,7 @@ Privacy-first PDF & image compression to **exact KB**. All compression happens i
 
 This repo currently contains:
 
-- [SOW_FormReady_PDF_Image_Compression.md](SOW_FormReady_PDF_Image_Compression.md) — full functional spec
+- [SOW_Compress4_PDF_Image_Compression.md](SOW_Compress4_PDF_Image_Compression.md) — full functional spec
 - [BRAND_GUIDELINES.md](BRAND_GUIDELINES.md) — brand bible (Razorpay-grade Indian Fintech-Modern)
 - `brand/` — design tokens (`tokens.ts`, `tokens.css`) + standalone HTML preview (`preview.html`)
 - `src/` — Next.js 14 App Router scaffold with the design system applied
@@ -41,7 +41,7 @@ Then visit:
 ```
 .
 ├── BRAND_GUIDELINES.md            ← single source of truth for brand rules
-├── SOW_FormReady_PDF_Image_Compression.md
+├── SOW_Compress4_PDF_Image_Compression.md
 ├── brand/
 │   ├── tokens.ts                  ← TS design tokens (importable by any tool)
 │   ├── tokens.css                 ← CSS custom properties
@@ -109,4 +109,4 @@ From Emil Kowalski's design engineering philosophy:
 6. Privacy verify page (`/privacy/verify`) with live DevTools-style network monitor
 7. Pro auth (Supabase + Google OAuth) and Razorpay billing
 
-See `SOW_FormReady_PDF_Image_Compression.md` for the full feature plan.
+See `SOW_Compress4_PDF_Image_Compression.md` for the full feature plan.

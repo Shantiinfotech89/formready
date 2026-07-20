@@ -51,7 +51,7 @@ export default function TermsPage() {
       <p>You agree to:</p>
       <ul>
         <li>Provide accurate, current information.</li>
-        <li>Promptly notify us of any unauthorised access via <a href="mailto:security@formready.in">security@formready.in</a>.</li>
+        <li>Promptly notify us of any unauthorised access via <a href="mailto:security@compress4.com">security@compress4.com</a>.</li>
         <li>Not share access credentials or attempt to use the Service from someone else&apos;s account.</li>
       </ul>
 
@@ -120,7 +120,7 @@ export default function TermsPage() {
       <h2>13. Governing law and dispute resolution</h2>
       <p>
         These Terms are governed by the laws of India. Any dispute arising under these Terms shall be subject to the exclusive jurisdiction of the courts at [JURISDICTION CITY — e.g., Mumbai], India. Before filing any formal claim, you agree to attempt good-faith resolution through email at{' '}
-        <a href="mailto:legal@formready.in">legal@formready.in</a>.
+        <a href="mailto:legal@compress4.com">legal@compress4.com</a>.
       </p>
 
       <h2>14. Changes</h2>
@@ -130,7 +130,7 @@ export default function TermsPage() {
 
       <h2>15. Contact</h2>
       <p>
-        For questions about these Terms: <a href="mailto:legal@formready.in">legal@formready.in</a>. For privacy questions, see our <Link href="/privacy">Privacy Policy</Link>. For all other queries: <a href="mailto:hello@formready.in">hello@formready.in</a>.
+        For questions about these Terms: <a href="mailto:legal@compress4.com">legal@compress4.com</a>. For privacy questions, see our <Link href="/privacy">Privacy Policy</Link>. For all other queries: <a href="mailto:hello@compress4.com">hello@compress4.com</a>.
       </p>
     </LegalPageShell>
   )

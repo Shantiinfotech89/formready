@@ -5,7 +5,7 @@ category: "visa-specs"
 excerpt: "Pixel dimensions, KB limits, head proportions, background rules, and the small differences between embassy specs that get applications rejected."
 publishedAt: "2026-04-29"
 updatedAt: "2026-04-29"
-author: "FormReady Team"
+author: "Compress4 Team"
 relatedTools:
   - "/photo-signature"
   - "/compress-image"
@@ -75,7 +75,7 @@ We default to **240 KB** because it's the universal lowest common denominator �
 - **Eyes open, looking at camera, no smile.** Schengen is biometric — the photo must work for facial recognition.
 - **Recent — within 6 months — and unaltered.** Don't use beauty filters.
 
-## How FormReady handles each
+## How Compress4 handles each
 
 When you pick a visa preset on our [photo & signature page](/photo-signature):
 

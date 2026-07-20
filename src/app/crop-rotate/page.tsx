@@ -22,7 +22,7 @@ const trustPoints = [
   {
     icon: RotateCw,
     title: 'Rotate cleanly',
-    body: '90° · 180° · 270° rotations preserved at full resolution. Output is upright and form-ready.',
+    body: '90° · 180° · 270° rotations preserved at full resolution. Output is upright and compress4.',
   },
   {
     icon: Lock,
